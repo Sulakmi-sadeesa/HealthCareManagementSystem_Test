@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Channel Status | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        body {
+            background: #f5f8fc;
+        }
+
+        /* NAVBAR */
+
+        .page-navbar {
+            height: 78px;
+            background: white;
+            border-bottom: 1px solid #e5edf5;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-nav-inner {
+            width: 92%;
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .page-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .page-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #0754a0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-logo-text {
+            font-size: 17px;
+            font-weight: 800;
+            color: #082f60;
+        }
+
+        .page-logo-text span {
+            color: #0874d1;
+        }
+
+        .back-dashboard {
+            color: #0754a0;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+
+        /* MAIN */
+
+        .channel-main {
+            width: 92%;
+            max-width: 1050px;
+            margin: auto;
+            padding: 40px 0 70px;
+        }
+
+
+        .page-heading {
+            margin-bottom: 30px;
+        }
+
+        .page-heading span {
+            color: #0870c8;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .page-heading h1 {
+            color: #082f60;
+            font-size: 32px;
+            margin: 8px 0;
+        }
+
+        .page-heading p {
+            color: #718399;
+            font-size: 12px;
+        }
+
+
+        /* STATUS CARD */
+
+        .channel-card {
+            background: white;
+            border: 1px solid #e1eaf3;
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(9, 54, 105, 0.06);
+        }
+
+
+        /* TOP */
+
+        .channel-top {
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0754a0,
+                    #0874d1
+                );
+
+            padding: 38px;
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .channel-top::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border: 45px solid rgba(255,255,255,0.04);
+
+            border-radius: 50%;
+
+            right: -100px;
+
+            top: -100px;
+
+        }
+
+
+        .channel-top-label {
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            opacity: 0.7;
+
+        }
+
+
+        .channel-number {
+
+            font-size: 65px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin: 8px 0;
+
+        }
+
+
+        .channel-subtitle {
+
+            font-size: 11px;
+
+            opacity: 0.75;
+
+        }
+
+
+        /* LIVE */
+
+        .live-status {
+
+            position: absolute;
+
+            top: 35px;
+
+            right: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            background: rgba(255,255,255,0.12);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .live-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            background: #62e69b;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 4px rgba(98,230,155,0.12);
+
+        }
+
+
+        /* STATS */
+
+        .channel-stats {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            padding: 28px;
+
+            gap: 15px;
+
+        }
+
+
+        .channel-stat {
+
+            background: #f7faff;
+
+            border: 1px solid #e8eff6;
+
+            border-radius: 17px;
+
+            padding: 20px;
+
+            text-align: center;
+
+        }
+
+
+        .stat-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 11px;
+
+            background: #eaf5ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 12px;
+
+        }
+
+
+        .channel-stat span {
+
+            display: block;
+
+            color: #8394a7;
+
+            font-size: 9px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .channel-stat strong {
+
+            display: block;
+
+            color: #173c5c;
+
+            font-size: 20px;
+
+        }
+
+
+        /* WAITING STATUS */
+
+        .waiting-section {
+
+            padding: 0 28px 28px;
+
+        }
+
+
+        .waiting-box {
+
+            background: #fff9e9;
+
+            border: 1px solid #f5e5ae;
+
+            border-radius: 17px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .waiting-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .waiting-icon {
+
+            width: 43px;
+
+            height: 43px;
+
+            background: #fff1bd;
+
+            color: #a97900;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .waiting-left strong {
+
+            display: block;
+
+            color: #785b0b;
+
+            font-size: 12px;
+
+        }
+
+
+        .waiting-left span {
+
+            display: block;
+
+            color: #9a8037;
+
+            font-size: 9px;
+
+            margin-top: 4px;
+
+        }
+
+
+        .waiting-badge {
+
+            background: #ffe49a;
+
+            color: #795a00;
+
+            padding: 8px 13px;
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* REFRESH */
+
+        .refresh-section {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+        }
+
+
+        .refresh-btn {
+
+            height: 45px;
+
+            padding: 0 22px;
+
+            border: none;
+
+            background: #0754a0;
+
+            color: white;
+
+            border-radius: 11px;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .refresh-btn:hover {
+
+            background: #063f7b;
+
+        }
+
+
+        .refresh-btn i {
+
+            margin-right: 7px;
+
+        }
+
+
+        .last-updated {
+
+            color: #98a7b7;
+
+            font-size: 9px;
+
+            margin-top: 10px;
+
+        }
+
+
+        /* INFORMATION */
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .info-card {
+
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            border-radius: 18px;
+
+            padding: 20px;
+
+        }
+
+
+        .info-card h3 {
+
+            color: #183d5d;
+
+            font-size: 12px;
+
+            margin: 0 0 10px;
+
+        }
+
+
+        .info-card p {
+
+            color: #8092a5;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+            margin: 0;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .channel-stats {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            .info-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .channel-main {
+
+                padding-top: 28px;
+
+            }
+
+            .page-heading h1 {
+
+                font-size: 27px;
+
+            }
+
+            .channel-top {
+
+                padding: 30px 22px;
+
+            }
+
+            .channel-number {
+
+                font-size: 50px;
+
+            }
+
+            .live-status {
+
+                top: 25px;
+
+                right: 20px;
+
+            }
+
+            .channel-stats {
+
+                padding: 18px;
+
+                gap: 10px;
+
+            }
+
+            .channel-stat {
+
+                padding: 15px 8px;
+
+            }
+
+            .waiting-section {
+
+                padding: 0 18px 20px;
+
+            }
+
+            .waiting-box {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="page-navbar">
+
+    <div class="page-nav-inner">
+
+        <a href="dashboard.html"
+           class="page-logo">
+
+            <div class="page-logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+            <div class="page-logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="dashboard.html"
+           class="back-dashboard">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="channel-main">
+
+
+    <div class="page-heading">
+
+        <span>
+            Live Queue
+        </span>
+
+        <h1>
+            Channel Status
+        </h1>
+
+        <p>
+            Track your appointment queue in real time.
+        </p>
+
+    </div>
+
+
+
+    <!-- CHANNEL CARD -->
+
+    <div class="channel-card">
+
+
+        <!-- TOP -->
+
+        <div class="channel-top">
+
+            <div class="channel-top-label">
+
+                Your Channel
+
+            </div>
+
+
+            <div class="channel-number">
+
+                C-023
+
+            </div>
+
+
+            <div class="channel-subtitle">
+
+                Dental Department • Dr. Perera
+
+            </div>
+
+
+            <div class="live-status">
+
+                <div class="live-dot"></div>
+
+                LIVE
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="channel-stats">
+
+
+            <!-- NOW SERVING -->
+
+            <div class="channel-stat">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                </div>
+
+                <span>
+                    Now Serving
+                </span>
+
+                <strong id="nowServing">
+                    C-019
+                </strong>
+
+            </div>
+
+
+
+            <!-- PATIENTS AHEAD -->
+
+            <div class="channel-stat">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <span>
+                    Patients Ahead
+                </span>
+
+                <strong id="patientsAhead">
+                    4
+                </strong>
+
+            </div>
+
+
+
+            <!-- WAITING -->
+
+            <div class="channel-stat">
+
+                <div class="stat-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                </div>
+
+                <span>
+                    Estimated Waiting
+                </span>
+
+                <strong id="waitingTime">
+                    25 min
+                </strong>
+
+            </div>
+
+
+
+            <!-- POSITION -->
+
+            <div class="channel-stat">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-list-ol"></i>
+
+                </div>
+
+                <span>
+                    Queue Position
+                </span>
+
+                <strong>
+                    #5
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WAITING -->
+
+        <div class="waiting-section">
+
+            <div class="waiting-box">
+
+
+                <div class="waiting-left">
+
+                    <div class="waiting-icon">
+
+                        <i class="fa-solid fa-hourglass-half"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Your appointment is in the queue
+                        </strong>
+
+                        <span>
+                            Please remain available near the Dental Department.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="waiting-badge">
+
+                    🟡 WAITING
+
+                </div>
+
+            </div>
+
+
+            <div class="refresh-section">
+
+                <button
+                    class="refresh-btn"
+                    onclick="refreshStatus()">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh Status
+
+                </button>
+
+
+                <div
+                    class="last-updated"
+                    id="lastUpdated">
+
+                    Last updated just now
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- INFORMATION -->
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                How the queue works
+
+            </h3>
+
+            <p>
+
+                Your channel number is assigned when your
+                appointment is confirmed. The queue updates
+                as patients are served by the doctor.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+
+                <i class="fa-solid fa-bell"></i>
+
+                Stay updated
+
+            </h3>
+
+            <p>
+
+                Keep notifications enabled so Medi House
+                can inform you when your appointment is
+                getting closer.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+    function refreshStatus() {
+
+        const button =
+            document.querySelector(".refresh-btn");
+
+        const originalText =
+            button.innerHTML;
+
+
+        button.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Updating...';
+
+        button.disabled = true;
+
+
+        setTimeout(function() {
+
+            /*
+             * Temporary demo update.
+             *
+             * Later this data will come from
+             * Java + Hibernate + MySQL.
+             */
+
+            const serving =
+                document.getElementById("nowServing");
+
+            const ahead =
+                document.getElementById("patientsAhead");
+
+            const waiting =
+                document.getElementById("waitingTime");
+
+
+            let currentAhead =
+                parseInt(ahead.innerText);
+
+
+            if (currentAhead > 0) {
+
+                currentAhead--;
+
+            }
+
+
+            ahead.innerText =
+                currentAhead;
+
+
+            waiting.innerText =
+                (currentAhead * 5) + " min";
+
+
+            document.getElementById("lastUpdated")
+                .innerText =
+                "Last updated just now";
+
+
+            button.innerHTML =
+                originalText;
+
+            button.disabled = false;
+
+
+        }, 1000);
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

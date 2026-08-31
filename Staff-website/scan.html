@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Scan Department | Medi House</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+   ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body{
+    background:#EEF5FC;
+    display:flex;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar{
+
+    width:250px;
+
+    height:100vh;
+
+    background:#032B63;
+
+    color:white;
+
+    padding:24px 18px;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+}
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:35px;
+}
+
+
+.logo i{
+
+    font-size:25px;
+}
+
+
+.logo h2{
+
+    font-size:22px;
+
+    font-weight:800;
+}
+
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    transition:.2s;
+}
+
+
+.menu a:hover,
+.menu .active{
+
+    background:#0A73D8;
+}
+
+
+.logout{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:18px;
+
+    right:18px;
+
+    background:#0A73D8;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.main{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:30px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+
+.header h1{
+
+    color:#082F60;
+
+    font-size:30px;
+}
+
+
+.staff{
+
+    background:white;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    color:#35506C;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.summary{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+}
+
+
+.card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.04);
+}
+
+
+.card i{
+
+    font-size:22px;
+
+    color:#0754A0;
+
+    margin-bottom:10px;
+}
+
+
+.card h2{
+
+    color:#082F60;
+
+    font-size:27px;
+
+    margin-bottom:3px;
+}
+
+
+.card span{
+
+    color:#70839A;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   CONTENT GRID
+   ========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:20px;
+}
+
+
+.panel{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+}
+
+
+.panel h3{
+
+    color:#082F60;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:18px;
+}
+
+
+.search input{
+
+    flex:1;
+
+    height:42px;
+
+    border:1px solid #D8E4F0;
+
+    border-radius:10px;
+
+    padding:0 12px;
+
+    outline:none;
+}
+
+
+.search button{
+
+    width:45px;
+
+    border:none;
+
+    background:#0754A0;
+
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   PATIENT REQUEST
+   ========================= */
+
+.patient{
+
+    padding:15px;
+
+    border:1px solid #E4EDF5;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.patient:hover{
+
+    background:#F7FBFF;
+
+    border-color:#0A73D8;
+}
+
+
+.patient strong{
+
+    display:block;
+
+    color:#1D3C59;
+
+    margin-bottom:5px;
+}
+
+
+.patient span{
+
+    font-size:13px;
+
+    color:#70839A;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-group{
+
+    margin-bottom:15px;
+}
+
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#35506C;
+}
+
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    border:1px solid #D8E4F0;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:white;
+}
+
+
+textarea{
+
+    height:90px;
+
+    resize:none;
+}
+
+
+/* =========================
+   UPLOAD
+   ========================= */
+
+.upload-box{
+
+    border:2px dashed #A9C9EA;
+
+    border-radius:13px;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:#F8FBFF;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.upload-box:hover{
+
+    background:#EDF6FF;
+
+    border-color:#0754A0;
+}
+
+
+.upload-box i{
+
+    font-size:30px;
+
+    color:#0754A0;
+
+    margin-bottom:9px;
+}
+
+
+.upload-box strong{
+
+    display:block;
+
+    color:#35506C;
+
+    font-size:14px;
+}
+
+
+.upload-box span{
+
+    display:block;
+
+    color:#8A9BAC;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.btn{
+
+    width:100%;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0754A0;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.btn:hover{
+
+    background:#053E78;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:1050px){
+
+    .summary{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:20px;
+
+    }
+
+    .summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .header{
+
+        align-items:flex-start;
+
+        gap:10px;
+
+        flex-direction:column;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     SIDEBAR
+     ========================= -->
+
+<div class="sidebar">
+
+
+    <div class="logo">
+
+        <i class="fa-solid fa-wave-square"></i>
+
+        <h2>
+            MEDI HOUSE
+        </h2>
+
+    </div>
+
+
+    <div class="menu">
+
+
+        <a href="#"
+           class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-microscope"></i>
+
+            Scan Requests
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            Scan Reports
+
+        </a>
+
+
+    </div>
+
+
+    <a href="index.html"
+       class="logout">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<div class="main">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>
+            Scan Department
+        </h1>
+
+
+        <div class="staff">
+
+            <i class="fa-solid fa-user"></i>
+
+            Scan Technician
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUMMARY
+         ========================= -->
+
+    <div class="summary">
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h2>
+                08
+            </h2>
+
+            <span>
+                Pending Scans
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-check-circle"></i>
+
+            <h2>
+                14
+            </h2>
+
+            <span>
+                Completed Today
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>
+                22
+            </h2>
+
+            <span>
+                Today's Patients
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            <h2>
+                35
+            </h2>
+
+            <span>
+                Total Reports
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         CONTENT
+         ========================= -->
+
+    <div class="grid">
+
+
+        <!-- =====================
+             REQUESTS
+             ===================== -->
+
+        <div class="panel">
+
+
+            <h3>
+                Today's Scan Requests
+            </h3>
+
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    placeholder="Search Patient ID...">
+
+                <button>
+
+                    <i class="fa-solid fa-search"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="patient"
+                 onclick="loadPatient(
+                 'Kavindi Perera',
+                 'MH-00482'
+                 )">
+
+                <strong>
+                    Kavindi Perera
+                </strong>
+
+                <span>
+                    MH-00482
+                </span>
+
+                <br>
+
+                <span>
+                    Ultrasound Scan
+                </span>
+
+            </div>
+
+
+
+            <div class="patient"
+                 onclick="loadPatient(
+                 'Nimal Silva',
+                 'MH-00483'
+                 )">
+
+                <strong>
+                    Nimal Silva
+                </strong>
+
+                <span>
+                    MH-00483
+                </span>
+
+                <br>
+
+                <span>
+                    CT Scan
+                </span>
+
+            </div>
+
+
+
+            <div class="patient"
+                 onclick="loadPatient(
+                 'Saman Kumara',
+                 'MH-00484'
+                 )">
+
+                <strong>
+                    Saman Kumara
+                </strong>
+
+                <span>
+                    MH-00484
+                </span>
+
+                <br>
+
+                <span>
+                    MRI Scan
+                </span>
+
+            </div>
+
+
+
+            <div class="patient"
+                 onclick="loadPatient(
+                 'Dilshan Fernando',
+                 'MH-00485'
+                 )">
+
+                <strong>
+                    Dilshan Fernando
+                </strong>
+
+                <span>
+                    MH-00485
+                </span>
+
+                <br>
+
+                <span>
+                    Ultrasound Scan
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================
+             REPORT
+             ===================== -->
+
+        <div class="panel">
+
+
+            <h3>
+                Create Scan Report
+            </h3>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Patient
+                </label>
+
+                <input
+                    id="patientName"
+                    value="Kavindi Perera"
+                    readonly>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Patient ID
+                </label>
+
+                <input
+                    id="patientID"
+                    value="MH-00482"
+                    readonly>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Scan Type
+                </label>
+
+                <select id="scanType">
+
+                    <option>
+                        Ultrasound
+                    </option>
+
+                    <option>
+                        CT Scan
+                    </option>
+
+                    <option>
+                        MRI Scan
+                    </option>
+
+                    <option>
+                        Doppler Scan
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Upload Scan File
+                </label>
+
+
+                <div class="upload-box"
+                     onclick="chooseFile()">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <strong>
+                        Upload Scan / Report
+                    </strong>
+
+                    <span>
+                        PDF, JPG, PNG or DICOM
+                    </span>
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="scanFile"
+                    style="display:none"
+                    accept=".pdf,.jpg,.jpeg,.png,.dcm">
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Findings / Notes
+                </label>
+
+                <textarea
+                    id="findings"
+                    placeholder="Enter scan findings and observations..."></textarea>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Report Status
+                </label>
+
+                <select id="reportStatus">
+
+                    <option>
+                        Completed
+                    </option>
+
+                    <option>
+                        Pending Review
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                class="btn"
+                onclick="saveReport()">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                Save Scan Report
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   SELECT PATIENT
+   ========================= */
+
+function loadPatient(name,id){
+
+    document.getElementById(
+        "patientName"
+    ).value = name;
+
+
+    document.getElementById(
+        "patientID"
+    ).value = id;
+
+}
+
+
+
+/* =========================
+   FILE UPLOAD
+   ========================= */
+
+function chooseFile(){
+
+    document.getElementById(
+        "scanFile"
+    ).click();
+
+}
+
+
+
+/* =========================
+   SAVE REPORT
+   ========================= */
+
+function saveReport(){
+
+    const patient =
+        document.getElementById(
+            "patientName"
+        ).value;
+
+
+    const scanType =
+        document.getElementById(
+            "scanType"
+        ).value;
+
+
+    alert(
+
+        "Scan Report Saved Successfully!\n\n" +
+
+        "Patient: " +
+        patient +
+
+        "\nScan Type: " +
+        scanType +
+
+        "\n\n" +
+
+        "This will later be stored in MySQL using Java + Hibernate."
+
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

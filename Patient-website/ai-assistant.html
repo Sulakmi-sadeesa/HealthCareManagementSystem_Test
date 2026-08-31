@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Medi AI | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: #f4f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .ai-navbar {
+            height: 76px;
+            background: white;
+            border-bottom: 1px solid #e2eaf3;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .ai-nav-inner {
+            width: 92%;
+            max-width: 1400px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .ai-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+
+        .ai-logo-icon {
+            width: 41px;
+            height: 41px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .ai-logo-text {
+            font-size: 17px;
+            font-weight: 800;
+
+            color: #082f60;
+        }
+
+
+        .ai-logo-text span {
+            color: #0874d1;
+        }
+
+
+        .back-dashboard {
+            text-decoration: none;
+
+            color: #0754a0;
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .ai-main {
+
+            width: 92%;
+            max-width: 1100px;
+
+            height: calc(100vh - 76px);
+
+            margin: auto;
+
+            padding: 25px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                280px 1fr;
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           LEFT SIDE
+           ========================= */
+
+        .ai-sidebar {
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            height: 100%;
+
+            overflow-y: auto;
+        }
+
+
+        .ai-profile {
+
+            text-align: center;
+
+            padding-bottom: 20px;
+
+            border-bottom: 1px solid #edf1f5;
+        }
+
+
+        .ai-avatar-large {
+
+            width: 65px;
+            height: 65px;
+
+            margin: auto;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0874d1
+                );
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            box-shadow:
+                0 10px 25px
+                rgba(7,84,160,.18);
+        }
+
+
+        .ai-profile h3 {
+
+            margin: 11px 0 4px;
+
+            color: #193d5b;
+
+            font-size: 12px;
+        }
+
+
+        .ai-profile p {
+
+            margin: 0;
+
+            color: #8b9aaa;
+
+            font-size: 8px;
+        }
+
+
+        .patient-tag {
+
+            display: inline-block;
+
+            margin-top: 9px;
+
+            padding: 5px 9px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            border-radius: 7px;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SIDEBAR BUTTONS
+           ========================= */
+
+        .sidebar-title {
+
+            color: #8a9bac;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin: 20px 0 10px;
+        }
+
+
+        .side-action {
+
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 11px 10px;
+
+            border-radius: 10px;
+
+            color: #536b80;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+        }
+
+
+        .side-action i {
+
+            width: 17px;
+
+            color: #0874d1;
+        }
+
+
+        .side-action:hover {
+
+            background: #edf6ff;
+
+            color: #0754a0;
+        }
+
+
+        /* =========================
+           CHAT AREA
+           ========================= */
+
+        .chat-container {
+
+            min-width: 0;
+
+            height: 100%;
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =========================
+           CHAT HEADER
+           ========================= */
+
+        .chat-header {
+
+            min-height: 72px;
+
+            padding: 15px 20px;
+
+            border-bottom: 1px solid #e8eef4;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .chat-header-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+        }
+
+
+        .ai-small-avatar {
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0754a0,
+                    #0b86df
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .chat-header h2 {
+
+            margin: 0;
+
+            color: #193d5b;
+
+            font-size: 13px;
+        }
+
+
+        .chat-header p {
+
+            margin: 4px 0 0;
+
+            color: #899aaa;
+
+            font-size: 8px;
+        }
+
+
+        .online-dot {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            color: #08704a;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        .online-dot span {
+
+            width: 7px;
+            height: 7px;
+
+            background: #22b573;
+
+            border-radius: 50%;
+        }
+
+
+        /* =========================
+           CHAT MESSAGES
+           ========================= */
+
+        .chat-messages {
+
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding: 22px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(8,116,209,.045),
+                    transparent 35%
+                );
+        }
+
+
+        .message {
+
+            display: flex;
+
+            gap: 9px;
+
+            margin-bottom: 18px;
+
+            max-width: 85%;
+        }
+
+
+        .message.user {
+
+            margin-left: auto;
+
+            flex-direction: row-reverse;
+        }
+
+
+        .message-avatar {
+
+            width: 29px;
+            height: 29px;
+
+            flex-shrink: 0;
+
+            border-radius: 9px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 9px;
+        }
+
+
+        .message.ai .message-avatar {
+
+            background: #e9f4ff;
+
+            color: #0754a0;
+        }
+
+
+        .message.user .message-avatar {
+
+            background: #0754a0;
+
+            color: white;
+        }
+
+
+        .message-content {
+
+            padding: 11px 13px;
+
+            border-radius: 14px;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+        }
+
+
+        .message.ai .message-content {
+
+            background: #f3f7fb;
+
+            color: #536b80;
+
+            border-top-left-radius: 4px;
+        }
+
+
+        .message.user .message-content {
+
+            background: #0754a0;
+
+            color: white;
+
+            border-top-right-radius: 4px;
+        }
+
+
+        .message-time {
+
+            font-size: 7px;
+
+            color: #9aa8b5;
+
+            margin-top: 5px;
+        }
+
+
+        .message.user .message-time {
+
+            text-align: right;
+
+            color: #8eb7db;
+        }
+
+
+        /* =========================
+           QUICK QUESTIONS
+           ========================= */
+
+        .suggestions {
+
+            padding: 12px 20px;
+
+            border-top: 1px solid #edf1f5;
+
+            background: white;
+        }
+
+
+        .suggestions-title {
+
+            color: #899aaa;
+
+            font-size: 8px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .suggestion-list {
+
+            display: flex;
+
+            gap: 7px;
+
+            overflow-x: auto;
+
+            padding-bottom: 3px;
+        }
+
+
+        .suggestion {
+
+            flex-shrink: 0;
+
+            border: 1px solid #dce7f1;
+
+            background: white;
+
+            color: #0754a0;
+
+            border-radius: 20px;
+
+            padding: 7px 11px;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            cursor: pointer;
+        }
+
+
+        .suggestion:hover {
+
+            background: #edf6ff;
+        }
+
+
+        /* =========================
+           INPUT
+           ========================= */
+
+        .chat-input-area {
+
+            padding: 13px 17px;
+
+            border-top: 1px solid #e5edf5;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .voice-button {
+
+            width: 39px;
+            height: 39px;
+
+            flex-shrink: 0;
+
+            border: 1px solid #dce6ef;
+
+            background: white;
+
+            color: #0754a0;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        .chat-input {
+
+            flex: 1;
+
+            height: 39px;
+
+            border: 1px solid #dce6ef;
+
+            border-radius: 10px;
+
+            padding: 0 12px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            color: #294a64;
+        }
+
+
+        .chat-input:focus {
+
+            border-color: #0874d1;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(8,116,209,.07);
+        }
+
+
+        .send-button {
+
+            width: 39px;
+            height: 39px;
+
+            flex-shrink: 0;
+
+            border: none;
+
+            background: #0754a0;
+
+            color: white;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        .send-button:hover {
+
+            background: #063f7b;
+        }
+
+
+        /* =========================
+           RECOMMENDATION CARD
+           ========================= */
+
+        .recommendation {
+
+            margin-top: 9px;
+
+            padding: 11px;
+
+            background: white;
+
+            border: 1px solid #dce7f1;
+
+            border-radius: 10px;
+        }
+
+
+        .recommendation strong {
+
+            display: block;
+
+            color: #0754a0;
+
+            font-size: 8px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .recommendation button {
+
+            border: none;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            font-family: inherit;
+
+            font-size: 7px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           TYPING
+           ========================= */
+
+        .typing {
+
+            display: none;
+
+            align-items: center;
+
+            gap: 4px;
+
+            margin-left: 38px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .typing.active {
+
+            display: flex;
+        }
+
+
+        .typing span {
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #7e9bb5;
+
+            animation:
+                typing 1s infinite;
+        }
+
+
+        .typing span:nth-child(2) {
+
+            animation-delay: .15s;
+        }
+
+
+        .typing span:nth-child(3) {
+
+            animation-delay: .3s;
+        }
+
+
+        @keyframes typing {
+
+            0%, 100% {
+                transform: translateY(0);
+                opacity: .4;
+            }
+
+            50% {
+                transform: translateY(-4px);
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            .ai-main {
+
+                height: calc(100vh - 76px);
+
+                width: 100%;
+
+                padding: 0;
+
+                display: block;
+            }
+
+
+            .ai-sidebar {
+
+                display: none;
+            }
+
+
+            .chat-container {
+
+                height: 100%;
+
+                border-radius: 0;
+
+                border: none;
+            }
+
+
+            .chat-messages {
+
+                padding: 18px 14px;
+            }
+
+
+            .message {
+
+                max-width: 92%;
+            }
+
+
+            .suggestions {
+
+                padding-left: 13px;
+
+                padding-right: 13px;
+            }
+
+
+            .chat-input-area {
+
+                padding: 10px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .ai-logo-text {
+
+                font-size: 15px;
+            }
+
+
+            .back-dashboard {
+
+                font-size: 9px;
+            }
+
+
+            .chat-header {
+
+                padding: 12px 14px;
+            }
+
+
+            .message-content {
+
+                font-size: 8.5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header class="ai-navbar">
+
+    <div class="ai-nav-inner">
+
+
+        <a href="dashboard.html"
+           class="ai-logo">
+
+            <div class="ai-logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="ai-logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="dashboard.html"
+           class="back-dashboard">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="ai-main">
+
+
+    <!-- =========================
+         SIDEBAR
+         ========================= -->
+
+    <aside class="ai-sidebar">
+
+
+        <div class="ai-profile">
+
+
+            <div class="ai-avatar-large">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+
+            <h3>
+                Medi AI Assistant
+            </h3>
+
+
+            <p>
+                Your personal Medi House assistant
+            </p>
+
+
+            <span class="patient-tag">
+                Patient: MH-00482
+            </span>
+
+        </div>
+
+
+
+        <div class="sidebar-title">
+            Quick Access
+        </div>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'When is my next appointment?'
+            )">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            My Appointment
+
+        </button>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'Show my recent reports.'
+            )">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            Recent Reports
+
+        </button>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'What is my channel status?'
+            )">
+
+            <i class="fa-solid fa-users"></i>
+
+            Channel Status
+
+        </button>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'Show my recent payments.'
+            )">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            Payments
+
+        </button>
+
+
+
+        <div class="sidebar-title">
+            Medi House
+        </div>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'What doctors are available?'
+            )">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            Available Doctors
+
+        </button>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'What services do you have?'
+            )">
+
+            <i class="fa-solid fa-hospital"></i>
+
+            Services
+
+        </button>
+
+
+        <button
+            class="side-action"
+            onclick="quickQuestion(
+                'What are your opening hours?'
+            )">
+
+            <i class="fa-solid fa-clock"></i>
+
+            Opening Hours
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =========================
+         CHAT
+         ========================= -->
+
+    <section class="chat-container">
+
+
+        <!-- HEADER -->
+
+        <header class="chat-header">
+
+
+            <div class="chat-header-left">
+
+
+                <div class="ai-small-avatar">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Medi AI
+                    </h2>
+
+                    <p>
+                        Ask anything about your Medi House account
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="online-dot">
+
+                <span></span>
+
+                Online
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- MESSAGES -->
+
+        <div
+            class="chat-messages"
+            id="chatMessages">
+
+
+            <!-- AI MESSAGE -->
+
+            <div class="message ai">
+
+
+                <div class="message-avatar">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <div class="message-content">
+
+                        Hello Kavindi! 👋
+
+                        <br><br>
+
+                        I'm <strong>Medi AI</strong>,
+                        your personal Medi House assistant.
+
+                        <br><br>
+
+                        I can help you with appointments,
+                        medical reports, prescriptions,
+                        payments and general Medi House
+                        information.
+
+                        <br><br>
+
+                        How can I help you today?
+
+                    </div>
+
+
+                    <div class="message-time">
+
+                        Medi AI • Now
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUGGESTION RESPONSE -->
+
+            <div class="message ai">
+
+
+                <div class="message-avatar">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                </div>
+
+
+                <div>
+
+                    <div class="message-content">
+
+                        Try asking me:
+
+                        <br><br>
+
+                        • "When is my next appointment?"
+
+                        <br>
+
+                        • "Show my recent reports."
+
+                        <br>
+
+                        • "What doctors are available?"
+
+                        <br>
+
+                        • "What are your opening hours?"
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- TYPING -->
+
+        <div
+            class="typing"
+            id="typingIndicator">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+
+        <!-- SUGGESTIONS -->
+
+        <div class="suggestions">
+
+
+            <div class="suggestions-title">
+
+                Suggested questions
+
+            </div>
+
+
+            <div class="suggestion-list">
+
+
+                <button
+                    class="suggestion"
+                    onclick="quickQuestion(
+                        'When is my next appointment?'
+                    )">
+
+                    📅 Next appointment
+
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    onclick="quickQuestion(
+                        'Show my recent reports.'
+                    )">
+
+                    📄 My reports
+
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    onclick="quickQuestion(
+                        'What doctors are available?'
+                    )">
+
+                    👨‍⚕️ Doctors
+
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    onclick="quickQuestion(
+                        'What services do you have?'
+                    )">
+
+                    🏥 Services
+
+                </button>
+
+
+                <button
+                    class="suggestion"
+                    onclick="quickQuestion(
+                        'What are your opening hours?'
+                    )">
+
+                    🕐 Opening hours
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INPUT -->
+
+        <div class="chat-input-area">
+
+
+            <button
+                class="voice-button"
+                onclick="voiceInput()">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </button>
+
+
+            <input
+                type="text"
+                id="chatInput"
+                class="chat-input"
+                placeholder="Ask Medi AI something..."
+                autocomplete="off">
+
+
+            <button
+                class="send-button"
+                onclick="sendMessage()">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+
+    /* =========================
+       INPUT ENTER KEY
+       ========================= */
+
+    document
+        .getElementById("chatInput")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+
+    /* =========================
+       SEND MESSAGE
+       ========================= */
+
+    function sendMessage() {
+
+
+        const input =
+            document.getElementById(
+                "chatInput"
+            );
+
+
+        const message =
+            input.value.trim();
+
+
+        if (message === "") {
+
+            return;
+
+        }
+
+
+        addUserMessage(message);
+
+
+        input.value = "";
+
+
+        showTyping();
+
+
+        setTimeout(
+            function() {
+
+                hideTyping();
+
+                generateResponse(message);
+
+            },
+            900
+        );
+
+    }
+
+
+
+    /* =========================
+       QUICK QUESTION
+       ========================= */
+
+    function quickQuestion(question) {
+
+
+        document
+            .getElementById("chatInput")
+            .value = question;
+
+
+        sendMessage();
+
+    }
+
+
+
+    /* =========================
+       ADD USER MESSAGE
+       ========================= */
+
+    function addUserMessage(text) {
+
+
+        const chat =
+            document.getElementById(
+                "chatMessages"
+            );
+
+
+        const message =
+            document.createElement("div");
+
+
+        message.className =
+            "message user";
+
+
+        message.innerHTML = `
+
+            <div class="message-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="message-content">
+
+                    ${escapeHTML(text)}
+
+                </div>
+
+
+                <div class="message-time">
+
+                    You • Now
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        chat.appendChild(message);
+
+
+        scrollChat();
+
+    }
+
+
+
+    /* =========================
+       ADD AI MESSAGE
+       ========================= */
+
+    function addAIMessage(text) {
+
+
+        const chat =
+            document.getElementById(
+                "chatMessages"
+            );
+
+
+        const message =
+            document.createElement("div");
+
+
+        message.className =
+            "message ai";
+
+
+        message.innerHTML = `
+
+            <div class="message-avatar">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="message-content">
+
+                    ${text}
+
+                </div>
+
+
+                <div class="message-time">
+
+                    Medi AI • Now
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        chat.appendChild(message);
+
+
+        scrollChat();
+
+    }
+
+
+
+    /* =========================
+       AI RESPONSE
+       ========================= */
+
+    function generateResponse(question) {
+
+
+        const q =
+            question.toLowerCase();
+
+
+        /* APPOINTMENT */
+
+        if (
+            q.includes("appointment") ||
+            q.includes("channel") ||
+            q.includes("next")
+        ) {
+
+
+            if (
+                q.includes("appointment") ||
+                q.includes("next")
+            ) {
+
+                addAIMessage(`
+
+                    Your next appointment is with
+                    <strong>Dr. Perera</strong>
+                    in the
+                    <strong>Dental Department</strong>.
+
+                    <br><br>
+
+                    📅 <strong>16 August 2026</strong>
+
+                    <br>
+
+                    🕓 <strong>4:00 PM</strong>
+
+                    <br>
+
+                    🎫 Channel:
+                    <strong>C-023</strong>
+
+                    <div class="recommendation">
+
+                        <strong>
+                            Appointment shortcut
+                        </strong>
+
+                        <button
+                            onclick="
+                                window.location.href =
+                                'appointments.html'
+                            ">
+
+                            View Appointment
+
+                        </button>
+
+                    </div>
+
+                `);
+
+            }
+
+            else {
+
+                addAIMessage(`
+
+                    Your current channel is
+                    <strong>C-023</strong>.
+
+                    <br><br>
+
+                    Now serving:
+                    <strong>C-019</strong>
+
+                    <br>
+
+                    Patients ahead:
+                    <strong>4</strong>
+
+                    <br>
+
+                    Estimated waiting time:
+                    <strong>25 minutes</strong>.
+
+                    <div class="recommendation">
+
+                        <strong>
+                            Channel shortcut
+                        </strong>
+
+                        <button
+                            onclick="
+                                window.location.href =
+                                'channel-status.html'
+                            ">
+
+                            View Channel Status
+
+                        </button>
+
+                    </div>
+
+                `);
+
+            }
+
+            return;
+
+        }
+
+
+
+        /* REPORTS */
+
+        if (
+            q.includes("report") ||
+            q.includes("x-ray") ||
+            q.includes("scan")
+        ) {
+
+            addAIMessage(`
+
+                You have
+                <strong>2 recent medical reports</strong>.
+
+                <br><br>
+
+                📄 X-Ray Report –
+                12 August 2026
+
+                <br>
+
+                🦷 Dental Report –
+                10 August 2026
+
+                <br><br>
+
+                Would you like to view your reports?
+
+                <div class="recommendation">
+
+                    <strong>
+                        Medical Reports
+                    </strong>
+
+                    <button
+                        onclick="
+                            window.location.href =
+                            'medical-reports.html'
+                        ">
+
+                        View Reports
+
+                    </button>
+
+                </div>
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* PRESCRIPTIONS */
+
+        if (
+            q.includes("prescription") ||
+            q.includes("medicine") ||
+            q.includes("medication")
+        ) {
+
+            addAIMessage(`
+
+                Your latest prescription was issued
+                by <strong>Dr. Silva</strong>
+                on <strong>12 August 2026</strong>.
+
+                <br><br>
+
+                It contains 2 medicines.
+
+                <br><br>
+
+                For safety, please follow the dosage
+                provided by your doctor.
+
+                <div class="recommendation">
+
+                    <strong>
+                        Prescriptions
+                    </strong>
+
+                    <button
+                        onclick="
+                            window.location.href =
+                            'prescriptions.html'
+                        ">
+
+                        View Prescription
+
+                    </button>
+
+                </div>
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* PAYMENTS */
+
+        if (
+            q.includes("payment") ||
+            q.includes("paid") ||
+            q.includes("receipt")
+        ) {
+
+            addAIMessage(`
+
+                Your recent payment was:
+
+                <br><br>
+
+                💳 Dental Consultation
+
+                <br>
+
+                Dr. Perera
+
+                <br>
+
+                Rs. 2,500
+
+                <br>
+
+                Status:
+                <strong>Paid</strong>
+
+                <div class="recommendation">
+
+                    <strong>
+                        Payment History
+                    </strong>
+
+                    <button
+                        onclick="
+                            window.location.href =
+                            'payments.html'
+                        ">
+
+                        View Payments
+
+                    </button>
+
+                </div>
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* DOCTORS */
+
+        if (
+            q.includes("doctor") ||
+            q.includes("doctors")
+        ) {
+
+            addAIMessage(`
+
+                Medi House currently has doctors
+                available in several departments.
+
+                <br><br>
+
+                👨‍⚕️ General Medicine
+
+                <br>
+
+                🦷 Dental
+
+                <br>
+
+                🔬 Laboratory
+
+                <br>
+
+                🩻 Radiology & Scanning
+
+                <br><br>
+
+                You can view doctor profiles and
+                available sessions from the Doctors page.
+
+                <div class="recommendation">
+
+                    <strong>
+                        Doctor Directory
+                    </strong>
+
+                    <button
+                        onclick="
+                            window.location.href =
+                            'doctors.html'
+                        ">
+
+                        View Doctors
+
+                    </button>
+
+                </div>
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* SERVICES */
+
+        if (
+            q.includes("service") ||
+            q.includes("services")
+        ) {
+
+            addAIMessage(`
+
+                Medi House provides:
+
+                <br><br>
+
+                🩺 General Consultation
+
+                <br>
+
+                🦷 Dental Care
+
+                <br>
+
+                🩻 Scanning
+
+                <br>
+
+                🔬 Laboratory Testing
+
+                <br>
+
+                🩺 Medical Diagnostics
+
+                <br>
+
+                💊 Prescription Services
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* OPENING HOURS */
+
+        if (
+            q.includes("opening") ||
+            q.includes("hours") ||
+            q.includes("open")
+        ) {
+
+            addAIMessage(`
+
+                Medi House is open during:
+
+                <br><br>
+
+                <strong>
+                    Monday – Saturday
+                </strong>
+
+                <br>
+
+                8:00 AM – 8:00 PM
+
+                <br><br>
+
+                Sunday
+
+                <br>
+
+                8:00 AM – 1:00 PM
+
+                <br><br>
+
+                Emergency services may have
+                separate operating hours.
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* LOCATION */
+
+        if (
+            q.includes("where") ||
+            q.includes("location") ||
+            q.includes("address")
+        ) {
+
+            addAIMessage(`
+
+                Medi House is located at:
+
+                <br><br>
+
+                <strong>
+                    Main Street,
+                    Colombo, Sri Lanka
+                </strong>
+
+                <br><br>
+
+                Our reception team can help you
+                find the correct department when
+                you arrive.
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* REGISTER */
+
+        if (
+            q.includes("register") ||
+            q.includes("registration")
+        ) {
+
+            addAIMessage(`
+
+                Patient registration is completed
+                through the
+                <strong>Medi House Reception</strong>.
+
+                <br><br>
+
+                Please visit the reception desk
+                with your identification document
+                to register as a patient.
+
+            `);
+
+            return;
+
+        }
+
+
+
+        /* DEFAULT */
+
+        addAIMessage(`
+
+            I'm sorry, I don't have enough
+            information to answer that yet.
+
+            <br><br>
+
+            You can ask me about:
+
+            <br><br>
+
+            • Appointments
+
+            <br>
+
+            • Channel status
+
+            <br>
+
+            • Medical reports
+
+            <br>
+
+            • Prescriptions
+
+            <br>
+
+            • Payments
+
+            <br>
+
+            • Doctors
+
+            <br>
+
+            • Services
+
+            <br>
+
+            • Opening hours
+
+            <br>
+
+            • Medi House location
+
+        `);
+
+    }
+
+
+
+    /* =========================
+       TYPING
+       ========================= */
+
+    function showTyping() {
+
+        document
+            .getElementById(
+                "typingIndicator"
+            )
+            .classList.add("active");
+
+        scrollChat();
+
+    }
+
+
+    function hideTyping() {
+
+        document
+            .getElementById(
+                "typingIndicator"
+            )
+            .classList.remove("active");
+
+    }
+
+
+
+    /* =========================
+       SCROLL
+       ========================= */
+
+    function scrollChat() {
+
+        const chat =
+            document.getElementById(
+                "chatMessages"
+            );
+
+
+        setTimeout(
+            function() {
+
+                chat.scrollTop =
+                    chat.scrollHeight;
+
+            },
+            50
+        );
+
+    }
+
+
+
+    /* =========================
+       VOICE
+       ========================= */
+
+    function voiceInput() {
+
+
+        if (
+            !("webkitSpeechRecognition" in window) &&
+            !("SpeechRecognition" in window)
+        ) {
+
+            alert(
+                "Voice input is not supported by this browser."
+            );
+
+            return;
+
+        }
+
+
+        const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
+
+
+        const recognition =
+            new SpeechRecognition();
+
+
+        recognition.lang =
+            "en-US";
+
+
+        recognition.start();
+
+
+        recognition.onresult =
+            function(event) {
+
+                document
+                    .getElementById(
+                        "chatInput"
+                    )
+                    .value =
+                    event.results[0][0].transcript;
+
+            };
+
+
+    }
+
+
+
+    /* =========================
+       HTML ESCAPE
+       ========================= */
+
+    function escapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

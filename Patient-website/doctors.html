@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Doctors | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .doctors-navbar {
+
+            height: 76px;
+
+            background: white;
+
+            border-bottom: 1px solid #e2eaf3;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .doctors-nav-inner {
+
+            width: 92%;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .doctors-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+
+        .doctors-logo-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .doctors-logo-text {
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color: #082f60;
+        }
+
+
+        .doctors-logo-text span {
+
+            color: #0874d1;
+        }
+
+
+        .back-home {
+
+            text-decoration: none;
+
+            color: #0754a0;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .doctors-main {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 45px 0 70px;
+        }
+
+
+        .doctors-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        .doctors-heading span {
+
+            color: #0874d1;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .doctors-heading h1 {
+
+            margin: 10px 0;
+
+            color: #082f60;
+
+            font-size: 36px;
+        }
+
+
+        .doctors-heading p {
+
+            color: #7c8d9e;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =========================
+           SEARCH
+           ========================= */
+
+        .doctor-tools {
+
+            margin: 30px auto 35px;
+
+            display: flex;
+
+            gap: 10px;
+
+            max-width: 800px;
+        }
+
+
+        .doctor-search {
+
+            flex: 1;
+
+            position: relative;
+        }
+
+
+        .doctor-search i {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #7f94a8;
+
+            font-size: 11px;
+        }
+
+
+        .doctor-search input {
+
+            width: 100%;
+
+            height: 45px;
+
+            border: 1px solid #dce6ef;
+
+            border-radius: 11px;
+
+            background: white;
+
+            outline: none;
+
+            padding: 0 15px 0 38px;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            color: #294a64;
+        }
+
+
+        .doctor-search input:focus {
+
+            border-color: #0874d1;
+
+            box-shadow:
+                0 0 0 3px rgba(8,116,209,.07);
+        }
+
+
+        .department-select {
+
+            width: 190px;
+
+            height: 45px;
+
+            border: 1px solid #dce6ef;
+
+            border-radius: 11px;
+
+            background: white;
+
+            outline: none;
+
+            padding: 0 12px;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            color: #536b80;
+        }
+
+
+
+        /* =========================
+           DOCTOR GRID
+           ========================= */
+
+        .doctor-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .doctor-card {
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: .25s ease;
+        }
+
+
+        .doctor-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(8,65,115,.10);
+        }
+
+
+        /* =========================
+           DOCTOR IMAGE
+           ========================= */
+
+        .doctor-image {
+
+            height: 210px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dceeff,
+                    #eef7ff
+                );
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+
+        .doctor-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* Placeholder when image isn't available */
+
+        .doctor-placeholder {
+
+            width: 115px;
+
+            height: 115px;
+
+            border-radius: 50%;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0754a0,
+                    #0b86df
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 45px;
+        }
+
+
+        /* =========================
+           DOCTOR INFO
+           ========================= */
+
+        .doctor-info {
+
+            padding: 19px;
+        }
+
+
+        .doctor-name {
+
+            color: #193d5b;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            margin: 0;
+        }
+
+
+        .doctor-specialization {
+
+            color: #0874d1;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            margin-top: 5px;
+        }
+
+
+        .doctor-department {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            padding: 5px 8px;
+
+            border-radius: 6px;
+
+            font-size: 7px;
+
+            font-weight: 700;
+        }
+
+
+        .doctor-details {
+
+            margin-top: 15px;
+
+            border-top: 1px solid #edf1f5;
+
+            padding-top: 13px;
+        }
+
+
+        .doctor-detail {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 9px;
+
+            color: #75889a;
+
+            font-size: 8px;
+        }
+
+
+        .doctor-detail i {
+
+            width: 15px;
+
+            color: #0874d1;
+        }
+
+
+        .doctor-detail strong {
+
+            color: #536b80;
+
+            font-weight: 600;
+        }
+
+
+        .view-profile {
+
+            width: 100%;
+
+            height: 38px;
+
+            margin-top: 8px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #0754a0;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+
+        .view-profile:hover {
+
+            background: #063f7b;
+        }
+
+
+
+        /* =========================
+           EMPTY STATE
+           ========================= */
+
+        .empty-state {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: #8192a2;
+        }
+
+
+        .empty-state i {
+
+            font-size: 30px;
+
+            color: #9bb4ca;
+
+            margin-bottom: 15px;
+        }
+
+
+        .empty-state h3 {
+
+            color: #49647b;
+
+            font-size: 14px;
+        }
+
+
+        .empty-state p {
+
+            font-size: 9px;
+        }
+
+
+
+        /* =========================
+           MODAL
+           ========================= */
+
+        .doctor-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(3,30,60,.55);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 1000;
+        }
+
+
+        .doctor-modal.active {
+
+            display: flex;
+        }
+
+
+        .modal-card {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 28px;
+
+            text-align: center;
+        }
+
+
+        .modal-icon {
+
+            width: 58px;
+
+            height: 58px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 21px;
+        }
+
+
+        .modal-card h2 {
+
+            color: #193d5b;
+
+            font-size: 16px;
+
+            margin: 15px 0 8px;
+        }
+
+
+        .modal-card p {
+
+            color: #7d8e9f;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        .modal-buttons {
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .modal-buttons button {
+
+            flex: 1;
+
+            height: 39px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        .login-button {
+
+            background: #0754a0;
+
+            color: white;
+        }
+
+
+        .reception-button {
+
+            background: #edf2f7;
+
+            color: #0754a0;
+        }
+
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 950px) {
+
+            .doctor-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .doctors-main {
+
+                padding-top: 30px;
+            }
+
+
+            .doctors-heading h1 {
+
+                font-size: 28px;
+            }
+
+
+            .doctor-tools {
+
+                flex-direction: column;
+            }
+
+
+            .department-select {
+
+                width: 100%;
+            }
+
+
+            .doctor-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .doctor-image {
+
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header class="doctors-navbar">
+
+    <div class="doctors-nav-inner">
+
+
+        <a href="index.html"
+           class="doctors-logo">
+
+            <div class="doctors-logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="doctors-logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="index.html"
+           class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="doctors-main">
+
+
+    <div class="doctors-heading">
+
+        <span>
+            Our Medical Team
+        </span>
+
+        <h1>
+            Meet Our Doctors
+        </h1>
+
+        <p>
+            Experienced and caring medical professionals
+            dedicated to providing quality healthcare
+            at Medi House.
+        </p>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="doctor-tools">
+
+
+        <div class="doctor-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="doctorSearch"
+                placeholder="Search doctor or specialization..."
+                onkeyup="filterDoctors()">
+
+        </div>
+
+
+        <select
+            class="department-select"
+            id="departmentFilter"
+            onchange="filterDoctors()">
+
+            <option value="all">
+                All Departments
+            </option>
+
+            <option value="General Medicine">
+                General Medicine
+            </option>
+
+            <option value="Dental">
+                Dental
+            </option>
+
+            <option value="Scanning">
+                Scanning
+            </option>
+
+            <option value="Laboratory">
+                Laboratory
+            </option>
+
+        </select>
+
+
+    </div>
+
+
+
+    <!-- DOCTORS -->
+
+    <div class="doctor-grid"
+         id="doctorGrid">
+
+
+
+        <!-- DOCTOR 1 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Nimal Perera"
+            data-specialization="General Physician"
+            data-department="General Medicine">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Nimal Perera
+                </h2>
+
+                <div class="doctor-specialization">
+                    General Physician
+                </div>
+
+                <span class="doctor-department">
+                    General Medicine
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Mon, Wed, Fri
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            9:00 AM – 1:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            12 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="viewDoctor('Dr. Nimal Perera')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCTOR 2 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Amaya Silva"
+            data-specialization="Dental Surgeon"
+            data-department="Dental">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-tooth"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Amaya Silva
+                </h2>
+
+                <div class="doctor-specialization">
+                    Dental Surgeon
+                </div>
+
+                <span class="doctor-department">
+                    Dental
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Tue, Thu, Sat
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            2:00 PM – 6:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            8 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="window.location.href='doctor-profile.html'">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                 </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCTOR 3 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Kasun Fernando"
+            data-specialization="Radiologist"
+            data-department="Scanning">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-x-ray"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Kasun Fernando
+                </h2>
+
+                <div class="doctor-specialization">
+                    Radiologist
+                </div>
+
+                <span class="doctor-department">
+                    Scanning
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Monday – Friday
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            10:00 AM – 4:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            10 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="viewDoctor('Dr. Kasun Fernando')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCTOR 4 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Tharushi Jayasuriya"
+            data-specialization="Laboratory Physician"
+            data-department="Laboratory">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-flask"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Tharushi Jayasuriya
+                </h2>
+
+                <div class="doctor-specialization">
+                    Laboratory Physician
+                </div>
+
+                <span class="doctor-department">
+                    Laboratory
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Mon, Tue, Thu
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            8:00 AM – 2:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            7 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="viewDoctor('Dr. Tharushi Jayasuriya')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCTOR 5 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Ruwan Silva"
+            data-specialization="Internal Medicine"
+            data-department="General Medicine">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Ruwan Silva
+                </h2>
+
+                <div class="doctor-specialization">
+                    Internal Medicine
+                </div>
+
+                <span class="doctor-department">
+                    General Medicine
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Tue, Thu, Sat
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            9:00 AM – 3:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            15 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="viewDoctor('Dr. Ruwan Silva')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCTOR 6 -->
+
+        <article
+            class="doctor-card"
+            data-name="Dr. Shehani Perera"
+            data-specialization="Dental Specialist"
+            data-department="Dental">
+
+
+            <div class="doctor-image">
+
+                <div class="doctor-placeholder">
+
+                    <i class="fa-solid fa-tooth"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2 class="doctor-name">
+                    Dr. Shehani Perera
+                </h2>
+
+                <div class="doctor-specialization">
+                    Dental Specialist
+                </div>
+
+                <span class="doctor-department">
+                    Dental
+                </span>
+
+
+                <div class="doctor-details">
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <strong>
+                            Monday – Thursday
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <strong>
+                            3:00 PM – 7:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="doctor-detail">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <strong>
+                            9 Years Experience
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-profile"
+                    onclick="viewDoctor('Dr. Shehani Perera')">
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+
+    <!-- EMPTY -->
+
+    <div
+        class="empty-state"
+        id="emptyState">
+
+        <i class="fa-solid fa-user-doctor"></i>
+
+        <h3>
+            No doctors found
+        </h3>
+
+        <p>
+            Try another name or department.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     LOGIN / RECEPTION MODAL
+     ========================= -->
+
+<div
+    class="doctor-modal"
+    id="doctorModal">
+
+
+    <div class="modal-card">
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+        </div>
+
+
+        <h2>
+            Ready to make an appointment?
+        </h2>
+
+
+        <p>
+
+            You need to be a registered patient
+            to make an appointment with
+            <strong id="selectedDoctor">
+                this doctor
+            </strong>.
+
+            <br><br>
+
+            If you already have an account,
+            please log in.
+
+            <br>
+
+            If you are not registered yet,
+            please visit Medi House Reception.
+
+        </p>
+
+
+        <div class="modal-buttons">
+
+
+            <button
+                class="login-button"
+                onclick="goToLogin()">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+
+            <button
+                class="reception-button"
+                onclick="closeDoctorModal()">
+
+                Reception
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    /* =========================
+       FILTER DOCTORS
+       ========================= */
+
+    function filterDoctors() {
+
+
+        const search =
+            document
+                .getElementById("doctorSearch")
+                .value
+                .toLowerCase();
+
+
+        const department =
+            document
+                .getElementById("departmentFilter")
+                .value;
+
+
+        const cards =
+            document.querySelectorAll(
+                ".doctor-card"
+            );
+
+
+        let visible = 0;
+
+
+        cards.forEach(
+            function(card) {
+
+
+                const name =
+                    card.dataset.name
+                    .toLowerCase();
+
+
+                const specialization =
+                    card.dataset.specialization
+                    .toLowerCase();
+
+
+                const cardDepartment =
+                    card.dataset.department;
+
+
+                const matchesSearch =
+                    name.includes(search) ||
+                    specialization.includes(search);
+
+
+                const matchesDepartment =
+                    department === "all" ||
+                    cardDepartment === department;
+
+
+                if (
+                    matchesSearch &&
+                    matchesDepartment
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                    visible++;
+
+                }
+
+                else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        const empty =
+            document.getElementById(
+                "emptyState"
+            );
+
+
+        empty.style.display =
+            visible === 0
+                ? "block"
+                : "none";
+
+    }
+
+
+
+    /* =========================
+       VIEW DOCTOR
+       ========================= */
+
+    function viewDoctor(doctorName) {
+
+
+        document
+            .getElementById(
+                "selectedDoctor"
+            )
+            .innerText =
+            doctorName;
+
+
+        document
+            .getElementById(
+                "doctorModal"
+            )
+            .classList.add("active");
+
+    }
+
+
+
+    /* =========================
+       CLOSE MODAL
+       ========================= */
+
+    function closeDoctorModal() {
+
+
+        document
+            .getElementById(
+                "doctorModal"
+            )
+            .classList.remove("active");
+
+    }
+
+
+
+    /* =========================
+       LOGIN
+       ========================= */
+
+    function goToLogin() {
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+
+    /* =========================
+       CLICK OUTSIDE
+       ========================= */
+
+    window.addEventListener(
+        "click",
+        function(event) {
+
+
+            const modal =
+                document.getElementById(
+                    "doctorModal"
+                );
+
+
+            if (
+                event.target === modal
+            ) {
+
+                closeDoctorModal();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

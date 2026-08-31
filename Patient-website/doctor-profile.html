@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Profile | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .profile-navbar {
+            height: 76px;
+            background: white;
+            border-bottom: 1px solid #e2eaf3;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .nav-inner {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .logo-text {
+            color: #082f60;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+
+        .logo-text span {
+            color: #0874d1;
+        }
+
+
+        .back-doctors {
+            text-decoration: none;
+            color: #0754a0;
+
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .profile-main {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 40px 0 70px;
+        }
+
+
+        .breadcrumb {
+            margin-bottom: 20px;
+
+            font-size: 8px;
+            color: #8294a5;
+        }
+
+
+        .breadcrumb a {
+            color: #0754a0;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           PROFILE HERO
+           ========================= */
+
+        .doctor-hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0874d1
+                );
+
+            border-radius: 24px;
+
+            padding: 35px;
+
+            color: white;
+
+            display: grid;
+
+            grid-template-columns: 190px 1fr;
+
+            gap: 30px;
+
+            align-items: center;
+
+            box-shadow:
+                0 18px 40px
+                rgba(7,84,160,.15);
+        }
+
+
+        .doctor-photo {
+
+            width: 175px;
+            height: 175px;
+
+            border-radius: 28px;
+
+            background:
+                rgba(255,255,255,.15);
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 65px;
+
+            color: white;
+        }
+
+
+        .doctor-hero-content h1 {
+
+            margin: 0;
+
+            font-size: 28px;
+        }
+
+
+        .doctor-hero-content .specialization {
+
+            margin-top: 8px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            opacity: .85;
+        }
+
+
+        .department-badge {
+
+            display: inline-block;
+
+            margin-top: 14px;
+
+            padding: 7px 11px;
+
+            background:
+                rgba(255,255,255,.15);
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            border-radius: 8px;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        .experience {
+
+            margin-top: 17px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================
+           CONTENT GRID
+           ========================= */
+
+        .content-grid {
+
+            margin-top: 22px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .profile-card {
+
+            background: white;
+
+            border:
+                1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card-header {
+
+            padding: 18px 21px;
+
+            border-bottom:
+                1px solid #edf1f5;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .card-icon {
+
+            width: 34px;
+            height: 34px;
+
+            border-radius: 10px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 11px;
+        }
+
+
+        .card-header h2 {
+
+            margin: 0;
+
+            color: #294a64;
+
+            font-size: 12px;
+        }
+
+
+        .card-body {
+
+            padding: 21px;
+        }
+
+
+        /* =========================
+           QUALIFICATIONS
+           ========================= */
+
+        .qualification {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .qualification:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .qualification-icon {
+
+            width: 34px;
+            height: 34px;
+
+            flex-shrink: 0;
+
+            border-radius: 9px;
+
+            background: #f1f7fc;
+
+            color: #0874d1;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px;
+        }
+
+
+        .qualification strong {
+
+            display: block;
+
+            color: #49647b;
+
+            font-size: 9px;
+        }
+
+
+        .qualification span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #899aaa;
+
+            font-size: 8px;
+        }
+
+
+        /* =========================
+           ABOUT
+           ========================= */
+
+        .about-text {
+
+            color: #718497;
+
+            font-size: 9px;
+
+            line-height: 1.8;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           SCHEDULE
+           ========================= */
+
+        .schedule-item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 12px 0;
+
+            border-bottom:
+                1px solid #edf1f5;
+        }
+
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+
+        .schedule-day {
+
+            color: #49647b;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        .schedule-time {
+
+            color: #0874d1;
+
+            background: #edf6ff;
+
+            padding: 6px 8px;
+
+            border-radius: 7px;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           FEE
+           ========================= */
+
+        .fee-box {
+
+            text-align: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1f8ff,
+                    #f8fbff
+                );
+
+            border-radius: 13px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .fee-label {
+
+            color: #8798a8;
+
+            font-size: 8px;
+        }
+
+
+        .fee {
+
+            margin-top: 5px;
+
+            color: #0754a0;
+
+            font-size: 25px;
+
+            font-weight: 800;
+        }
+
+
+        .fee-note {
+
+            color: #8a9aaa;
+
+            font-size: 7px;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           CHANNEL BUTTON
+           ========================= */
+
+        .channel-button {
+
+            width: 100%;
+
+            height: 46px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #0754a0;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+
+        .channel-button:hover {
+
+            background: #063f7b;
+
+            transform: translateY(-1px);
+        }
+
+
+        .channel-button i {
+            margin-right: 6px;
+        }
+
+
+        /* =========================
+           NOTICE
+           ========================= */
+
+        .notice {
+
+            margin-top: 12px;
+
+            padding: 11px;
+
+            background: #fff9e8;
+
+            border: 1px solid #f3e5b7;
+
+            border-radius: 9px;
+
+            color: #856b29;
+
+            font-size: 7px;
+
+            line-height: 1.6;
+        }
+
+
+        .notice i {
+            margin-right: 4px;
+        }
+
+
+        /* =========================
+           MODAL
+           ========================= */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(3,30,60,.55);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 1000;
+        }
+
+
+        .modal.active {
+            display: flex;
+        }
+
+
+        .modal-box {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 28px;
+
+            text-align: center;
+        }
+
+
+        .modal-icon {
+
+            width: 58px;
+            height: 58px;
+
+            margin: auto;
+
+            border-radius: 18px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+        }
+
+
+        .modal-box h2 {
+
+            margin: 15px 0 8px;
+
+            color: #193d5b;
+
+            font-size: 16px;
+        }
+
+
+        .modal-box p {
+
+            color: #7d8e9f;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        .modal-buttons {
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .modal-buttons button {
+
+            flex: 1;
+
+            height: 40px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        .login-btn {
+
+            background: #0754a0;
+
+            color: white;
+        }
+
+
+        .reception-btn {
+
+            background: #edf2f7;
+
+            color: #0754a0;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            .doctor-hero {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 28px 20px;
+            }
+
+
+            .doctor-photo {
+
+                margin: auto;
+
+                width: 145px;
+                height: 145px;
+            }
+
+
+            .experience {
+
+                justify-content: center;
+            }
+
+
+            .content-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .profile-main {
+
+                padding-top: 25px;
+            }
+
+
+            .doctor-hero-content h1 {
+
+                font-size: 23px;
+            }
+
+
+            .doctor-hero {
+
+                border-radius: 18px;
+            }
+
+
+            .modal-buttons {
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header class="profile-navbar">
+
+    <div class="nav-inner">
+
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="doctors.html"
+           class="back-doctors">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Doctors
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="profile-main">
+
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        &nbsp; / &nbsp;
+
+        <a href="doctors.html">
+            Doctors
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Doctor Profile
+
+    </div>
+
+
+
+    <!-- =========================
+         DOCTOR HERO
+         ========================= -->
+
+    <section class="doctor-hero">
+
+
+        <div class="doctor-photo">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+        </div>
+
+
+        <div class="doctor-hero-content">
+
+            <h1>
+                Dr. Amaya Silva
+            </h1>
+
+
+            <div class="specialization">
+
+                Dental Surgeon
+
+            </div>
+
+
+            <span class="department-badge">
+
+                <i class="fa-solid fa-tooth"></i>
+
+                Dental Department
+
+            </span>
+
+
+            <div class="experience">
+
+                <i class="fa-solid fa-award"></i>
+
+                8+ Years of Professional Experience
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTENT
+         ========================= -->
+
+    <div class="content-grid">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+            <!-- QUALIFICATIONS -->
+
+            <section class="profile-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Qualifications
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="qualification">
+
+                        <div class="qualification-icon">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Bachelor of Dental Surgery
+                            </strong>
+
+                            <span>
+                                University of Colombo
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="qualification">
+
+                        <div class="qualification-icon">
+
+                            <i class="fa-solid fa-certificate"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Postgraduate Certificate in Dental Care
+                            </strong>
+
+                            <span>
+                                Sri Lanka Dental Association
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="qualification">
+
+                        <div class="qualification-icon">
+
+                            <i class="fa-solid fa-award"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Registered Dental Surgeon
+                            </strong>
+
+                            <span>
+                                Sri Lanka Medical Council
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ABOUT -->
+
+            <section class="profile-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                    </div>
+
+
+                    <h2>
+                        About the Doctor
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <p class="about-text">
+
+                        Dr. Amaya Silva is an experienced
+                        dental surgeon providing
+                        professional and patient-focused
+                        dental care.
+
+                        <br><br>
+
+                        She specializes in preventive
+                        dental care, general dentistry,
+                        dental consultations and
+                        oral health guidance.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div>
+
+
+            <!-- SCHEDULE -->
+
+            <section class="profile-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Available Sessions
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="schedule-item">
+
+                        <span class="schedule-day">
+                            Tuesday
+                        </span>
+
+                        <span class="schedule-time">
+                            2:00 PM – 6:00 PM
+                        </span>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <span class="schedule-day">
+                            Thursday
+                        </span>
+
+                        <span class="schedule-time">
+                            2:00 PM – 6:00 PM
+                        </span>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <span class="schedule-day">
+                            Saturday
+                        </span>
+
+                        <span class="schedule-time">
+                            9:00 AM – 1:00 PM
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- BOOKING -->
+
+            <section class="profile-card">
+
+
+                <div class="card-body">
+
+
+                    <div class="fee-box">
+
+                        <div class="fee-label">
+                            Consultation Fee
+                        </div>
+
+
+                        <div class="fee">
+                            Rs. 2,500
+                        </div>
+
+
+                        <div class="fee-note">
+                            Per consultation
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="channel-button"
+                        onclick="channelDoctor()">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Channel Doctor
+
+                    </button>
+
+
+                    <div class="notice">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        You need to be a registered
+                        patient to make an appointment.
+                        If you are not registered,
+                        please visit Medi House Reception.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     MODAL
+     ========================= -->
+
+<div
+    class="modal"
+    id="bookingModal">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+        </div>
+
+
+        <h2>
+            Patient Registration Required
+        </h2>
+
+
+        <p>
+
+            You need to be a registered patient
+            to make an appointment with
+            <strong>Dr. Amaya Silva</strong>.
+
+            <br><br>
+
+            Already registered?
+
+            Please log in to continue.
+
+            <br><br>
+
+            Not registered yet?
+
+            Please visit Medi House Reception
+            to register.
+
+        </p>
+
+
+        <div class="modal-buttons">
+
+
+            <button
+                class="login-btn"
+                onclick="goLogin()">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+
+            <button
+                class="reception-btn"
+                onclick="closeModal()">
+
+                Close
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    function channelDoctor() {
+
+        document
+            .getElementById("bookingModal")
+            .classList.add("active");
+
+    }
+
+
+    function closeModal() {
+
+        document
+            .getElementById("bookingModal")
+            .classList.remove("active");
+
+    }
+
+
+    function goLogin() {
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+    window.addEventListener(
+        "click",
+        function(event) {
+
+            const modal =
+                document.getElementById(
+                    "bookingModal"
+                );
+
+
+            if (event.target === modal) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

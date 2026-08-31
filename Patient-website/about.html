@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .about-navbar {
+            height: 76px;
+            background: white;
+            border-bottom: 1px solid #e2eaf3;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            color: #082f60;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            color: #0874d1;
+        }
+
+        .back-home {
+            color: #0754a0;
+            text-decoration: none;
+
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .about-main {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 45px 0 75px;
+        }
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .about-hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0874d1
+                );
+
+            border-radius: 24px;
+
+            padding: 45px;
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .about-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            right: -70px;
+            top: -80px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 700px;
+        }
+
+        .about-label {
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255,255,255,.72);
+        }
+
+        .about-hero h1 {
+
+            font-size: 34px;
+
+            margin: 10px 0 12px;
+        }
+
+        .about-hero p {
+
+            margin: 0;
+
+            color:
+                rgba(255,255,255,.78);
+
+            font-size: 10px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           INTRO
+           ========================= */
+
+        .intro-section {
+
+            margin-top: 25px;
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            padding: 30px;
+        }
+
+        .section-title {
+
+            color: #082f60;
+
+            font-size: 18px;
+
+            margin: 0 0 12px;
+        }
+
+        .section-text {
+
+            color: #788b9d;
+
+            font-size: 9px;
+
+            line-height: 1.9;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           MISSION VISION
+           ========================= */
+
+        .mission-grid {
+
+            margin-top: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .mission-card {
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            padding: 25px;
+        }
+
+        .mission-icon {
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 14px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+        }
+
+        .mission-card h2 {
+
+            color: #294a64;
+
+            font-size: 13px;
+
+            margin: 0 0 8px;
+        }
+
+        .mission-card p {
+
+            color: #8495a5;
+
+            font-size: 8px;
+
+            line-height: 1.8;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           FACILITIES
+           ========================= */
+
+        .facilities {
+
+            margin-top: 20px;
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            padding: 28px;
+        }
+
+        .facility-grid {
+
+            margin-top: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .facility {
+
+            padding: 18px 12px;
+
+            background: #f6f9fc;
+
+            border-radius: 13px;
+
+            text-align: center;
+        }
+
+        .facility i {
+
+            color: #0874d1;
+
+            font-size: 18px;
+
+            margin-bottom: 9px;
+        }
+
+        .facility span {
+
+            display: block;
+
+            color: #60788d;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           DEPARTMENTS
+           ========================= */
+
+        .departments {
+
+            margin-top: 20px;
+        }
+
+        .department-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 18px;
+        }
+
+        .department {
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            transition: .2s;
+        }
+
+        .department:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(7,84,160,.08);
+        }
+
+        .department-icon {
+
+            width: 44px;
+            height: 44px;
+
+            margin: auto auto 10px;
+
+            border-radius: 12px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .department h3 {
+
+            color: #4b667d;
+
+            font-size: 9px;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           CONTACT
+           ========================= */
+
+        .contact-section {
+
+            margin-top: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .contact-card {
+
+            background: white;
+
+            border: 1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            padding: 25px;
+        }
+
+        .contact-item {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-item:last-child {
+
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+
+            width: 35px;
+            height: 35px;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px;
+        }
+
+        .contact-item strong {
+
+            display: block;
+
+            color: #506a80;
+
+            font-size: 8px;
+        }
+
+        .contact-item span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #899aaa;
+
+            font-size: 7px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           OPENING HOURS
+           ========================= */
+
+        .hours-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            padding: 12px 0;
+
+            border-bottom:
+                1px solid #edf1f5;
+        }
+
+        .hours-row:last-child {
+
+            border-bottom: none;
+        }
+
+        .hours-row span:first-child {
+
+            color: #536b80;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+        .hours-row span:last-child {
+
+            color: #0874d1;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 850px) {
+
+            .facility-grid,
+            .department-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .about-main {
+
+                padding-top: 30px;
+            }
+
+            .about-hero {
+
+                padding: 30px 22px;
+
+                border-radius: 18px;
+            }
+
+            .about-hero h1 {
+
+                font-size: 27px;
+            }
+
+            .mission-grid,
+            .contact-section {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .facility-grid,
+            .department-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header class="about-navbar">
+
+    <div class="nav-inner">
+
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+            <div class="logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="index.html"
+           class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="about-main">
+
+
+    <!-- HERO -->
+
+    <section class="about-hero">
+
+
+        <div class="about-hero-content">
+
+            <div class="about-label">
+
+                About Medi House
+
+            </div>
+
+
+            <h1>
+
+                Healthcare designed
+                around you.
+
+            </h1>
+
+
+            <p>
+
+                Medi House is committed to providing
+                accessible healthcare services with
+                modern facilities, experienced
+                professionals and a patient-first
+                approach.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- INTRO -->
+
+    <section class="intro-section">
+
+
+        <h2 class="section-title">
+
+            Medi House
+
+        </h2>
+
+
+        <p class="section-text">
+
+            Medi House provides accessible healthcare
+            services with modern facilities and
+            professional medical staff.
+
+            <br><br>
+
+            Our healthcare management system connects
+            patients and healthcare staff through a
+            convenient digital platform. Patients can
+            explore doctors, services and departments,
+            while registered patients can manage their
+            appointments, reports, prescriptions,
+            payments and personal information.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- MISSION + VISION -->
+
+    <section class="mission-grid">
+
+
+        <div class="mission-card">
+
+
+            <div class="mission-icon">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+            </div>
+
+
+            <h2>
+                Our Mission
+            </h2>
+
+
+            <p>
+
+                To provide reliable, accessible and
+                patient-centered healthcare services
+                while using modern technology to
+                improve the overall healthcare
+                experience.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="mission-card">
+
+
+            <div class="mission-icon">
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+
+            <h2>
+                Our Vision
+            </h2>
+
+
+            <p>
+
+                To create a trusted and connected
+                healthcare environment where patients
+                can easily access quality medical
+                services and information.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FACILITIES -->
+
+    <section class="facilities">
+
+
+        <h2 class="section-title">
+
+            Our Facilities
+
+        </h2>
+
+
+        <p class="section-text">
+
+            Medi House provides essential healthcare
+            facilities to support patients throughout
+            their healthcare journey.
+
+        </p>
+
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+
+                <i class="fa-solid fa-hospital"></i>
+
+                <span>
+                    Modern Clinic
+                </span>
+
+            </div>
+
+
+            <div class="facility">
+
+                <i class="fa-solid fa-x-ray"></i>
+
+                <span>
+                    X-Ray Unit
+                </span>
+
+            </div>
+
+
+            <div class="facility">
+
+                <i class="fa-solid fa-flask"></i>
+
+                <span>
+                    Laboratory
+                </span>
+
+            </div>
+
+
+            <div class="facility">
+
+                <i class="fa-solid fa-microscope"></i>
+
+                <span>
+                    Scanning Unit
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- DEPARTMENTS -->
+
+    <section class="departments" id="departments">
+
+
+        <div class="intro-section">
+
+            <h2 class="section-title">
+
+                Departments
+
+            </h2>
+
+
+            <p class="section-text">
+
+                Explore the main healthcare departments
+                available at Medi House.
+
+            </p>
+
+
+            <div class="department-grid">
+
+
+                <div class="department">
+
+                    <div class="department-icon">
+
+                        <i class="fa-solid fa-stethoscope"></i>
+
+                    </div>
+
+                    <h3>
+                        General Medicine
+                    </h3>
+
+                </div>
+
+
+
+                <div class="department">
+
+                    <div class="department-icon">
+
+                        <i class="fa-solid fa-tooth"></i>
+
+                    </div>
+
+                    <h3>
+                        Dental
+                    </h3>
+
+                </div>
+
+
+
+                <div class="department">
+
+                    <div class="department-icon">
+
+                        <i class="fa-solid fa-microscope"></i>
+
+                    </div>
+
+                    <h3>
+                        Scanning
+                    </h3>
+
+                </div>
+
+
+
+                <div class="department">
+
+                    <div class="department-icon">
+
+                        <i class="fa-solid fa-flask"></i>
+
+                    </div>
+
+                    <h3>
+                        Laboratory
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- CONTACT + HOURS -->
+
+    <section class="contact-section">
+
+
+        <!-- CONTACT -->
+
+        <div class="contact-card">
+
+
+            <h2 class="section-title">
+
+                Contact Information
+
+            </h2>
+
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Location
+                    </strong>
+
+                    <span>
+                        Medi House, Main Street,
+                        Colombo, Sri Lanka
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <span>
+                        +94 11 234 5678
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <span>
+                        info@medihouse.lk
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- HOURS -->
+
+        <div class="contact-card">
+
+
+            <h2 class="section-title">
+
+                Opening Hours
+
+            </h2>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Monday
+                </span>
+
+                <span>
+                    8:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Tuesday
+                </span>
+
+                <span>
+                    8:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Wednesday
+                </span>
+
+                <span>
+                    8:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Thursday
+                </span>
+
+                <span>
+                    8:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Friday
+                </span>
+
+                <span>
+                    8:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Saturday
+                </span>
+
+                <span>
+                    8:00 AM – 4:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <span>
+                    Sunday
+                </span>
+
+                <span>
+                    Closed
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

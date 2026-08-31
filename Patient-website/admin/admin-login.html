@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* =========================
+   RESET
+   ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body{
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #032B63,
+            #0754A0,
+            #0A73D8
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+
+/* =========================
+   BACKGROUND DECORATION
+   ========================= */
+
+.background-circle{
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    top:-120px;
+    right:-100px;
+}
+
+
+.background-circle.two{
+
+    width:280px;
+    height:280px;
+
+    top:auto;
+    right:auto;
+
+    bottom:-100px;
+    left:-100px;
+}
+
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+
+.login-card{
+
+    width:100%;
+
+    max-width:430px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.20);
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:28px;
+}
+
+
+.logo-icon{
+
+    width:60px;
+    height:60px;
+
+    margin:0 auto 12px;
+
+    background:#0754A0;
+
+    color:white;
+
+    border-radius:17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:27px;
+
+    box-shadow:
+        0 10px 25px rgba(7,84,160,.25);
+}
+
+
+.logo h1{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    color:#082F60;
+}
+
+
+.logo h1 span{
+
+    color:#0874D1;
+}
+
+
+.logo p{
+
+    color:#8798AA;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+/* =========================
+   ADMIN BADGE
+   ========================= */
+
+.admin-badge{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    width:max-content;
+
+    margin:0 auto 24px;
+
+    padding:7px 13px;
+
+    background:#EDF6FF;
+
+    color:#0754A0;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   HEADING
+   ========================= */
+
+.login-heading{
+
+    margin-bottom:22px;
+}
+
+
+.login-heading h2{
+
+    color:#183B5B;
+
+    font-size:22px;
+
+    margin-bottom:6px;
+}
+
+
+.login-heading p{
+
+    color:#8193A6;
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-group{
+
+    margin-bottom:17px;
+}
+
+
+.form-group label{
+
+    display:block;
+
+    color:#35516B;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    margin-bottom:7px;
+}
+
+
+.input-box{
+
+    height:46px;
+
+    border:1px solid #DCE6F0;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 13px;
+
+    gap:9px;
+
+    transition:.2s;
+}
+
+
+.input-box:focus-within{
+
+    border-color:#0A73D8;
+
+    box-shadow:
+        0 0 0 3px rgba(10,115,216,.08);
+}
+
+
+.input-box i{
+
+    color:#8AA0B5;
+
+    font-size:13px;
+}
+
+
+.input-box input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    font-size:11px;
+
+    color:#28455F;
+
+    background:transparent;
+}
+
+
+/* =========================
+   PASSWORD BUTTON
+   ========================= */
+
+.password-toggle{
+
+    cursor:pointer;
+
+    color:#8295A9;
+
+}
+
+
+/* =========================
+   LOGIN OPTIONS
+   ========================= */
+
+.login-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:4px 0 20px;
+}
+
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#71859A;
+
+    font-size:10px;
+}
+
+
+.remember input{
+
+    accent-color:#0754A0;
+}
+
+
+.forgot{
+
+    color:#0754A0;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.login-btn{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:#0754A0;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.login-btn:hover{
+
+    background:#053E78;
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(7,84,160,.22);
+}
+
+
+/* =========================
+   SECURITY MESSAGE
+   ========================= */
+
+.security{
+
+    margin-top:22px;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    background:#F5F9FD;
+
+    display:flex;
+
+    gap:9px;
+
+    align-items:flex-start;
+}
+
+
+.security i{
+
+    color:#08704A;
+
+    font-size:12px;
+
+    margin-top:2px;
+}
+
+
+.security p{
+
+    color:#8092A5;
+
+    font-size:9px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   BACK LINK
+   ========================= */
+
+.back-link{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#0754A0;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:500px){
+
+    .login-card{
+
+        padding:30px 22px;
+
+        border-radius:20px;
+    }
+
+    .login-heading h2{
+
+        font-size:20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background-circle"></div>
+
+<div class="background-circle two"></div>
+
+
+
+<!-- LOGIN CARD -->
+
+<div class="login-card">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-plus"></i>
+
+        </div>
+
+
+        <h1>
+
+            MEDI
+            <span>HOUSE</span>
+
+        </h1>
+
+
+        <p>
+
+            Healthcare Management System
+
+        </p>
+
+    </div>
+
+
+
+    <!-- ADMIN BADGE -->
+
+    <div class="admin-badge">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        ADMINISTRATOR ACCESS
+
+    </div>
+
+
+
+    <!-- HEADING -->
+
+    <div class="login-heading">
+
+        <h2>
+
+            Welcome, Administrator
+
+        </h2>
+
+
+        <p>
+
+            Sign in to access the Medi House
+            management dashboard.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- FORM -->
+
+    <form id="adminLoginForm">
+
+
+        <!-- USERNAME -->
+
+        <div class="form-group">
+
+            <label>
+
+                Admin Username
+
+            </label>
+
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter admin username"
+                    required>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label>
+
+                Password
+
+            </label>
+
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required>
+
+
+                <i
+                    class="fa-solid fa-eye password-toggle"
+                    id="togglePassword"
+                    onclick="togglePassword()">
+                </i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OPTIONS -->
+
+        <div class="login-options">
+
+
+            <label class="remember">
+
+                <input
+                    type="checkbox">
+
+                Remember me
+
+            </label>
+
+
+            <a
+                href="#"
+                class="forgot"
+                onclick="forgotPassword()">
+
+                Forgot password?
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- LOGIN -->
+
+        <button
+            type="submit"
+            class="login-btn">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            &nbsp;
+
+            Sign In to Admin Panel
+
+        </button>
+
+
+    </form>
+
+
+
+    <!-- SECURITY -->
+
+    <div class="security">
+
+        <i class="fa-solid fa-shield-check"></i>
+
+
+        <p>
+
+            This is a restricted area.
+            Only authorized Medi House administrators
+            can access the management system.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- BACK -->
+
+    <a
+        href="../index.html"
+        class="back-link">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Medi House
+
+    </a>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   PASSWORD TOGGLE
+   ========================= */
+
+function togglePassword(){
+
+    const password =
+        document.getElementById(
+            "password"
+        );
+
+    const icon =
+        document.getElementById(
+            "togglePassword"
+        );
+
+
+    if(
+        password.type === "password"
+    ){
+
+        password.type = "text";
+
+        icon.classList.remove(
+            "fa-eye"
+        );
+
+        icon.classList.add(
+            "fa-eye-slash"
+        );
+
+    }
+
+    else{
+
+        password.type = "password";
+
+        icon.classList.remove(
+            "fa-eye-slash"
+        );
+
+        icon.classList.add(
+            "fa-eye"
+        );
+
+    }
+
+}
+
+
+
+/* =========================
+   LOGIN
+   ========================= */
+
+document
+    .getElementById("adminLoginForm")
+    .addEventListener(
+        "submit",
+        function(event){
+
+            event.preventDefault();
+
+
+            const username =
+                document.getElementById(
+                    "username"
+                ).value;
+
+
+            const password =
+                document.getElementById(
+                    "password"
+                ).value;
+
+
+            /*
+             * TEMPORARY LOGIN
+             *
+             * Later this will be replaced
+             * with Java + Hibernate + MySQL.
+             */
+
+            if(
+                username === "admin" &&
+                password === "admin123"
+            ){
+
+                window.location.href =
+                    "admin.html";
+
+            }
+
+            else{
+
+                alert(
+                    "Invalid administrator username or password."
+                );
+
+            }
+
+        }
+    );
+
+
+
+/* =========================
+   FORGOT PASSWORD
+   ========================= */
+
+function forgotPassword(){
+
+    alert(
+        "Password recovery will be connected to the backend later."
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

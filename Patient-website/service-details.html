@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Service Details | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+
+        /* NAVBAR */
+
+        .service-navbar {
+
+            height: 76px;
+
+            background: white;
+
+            border-bottom: 1px solid #e2eaf3;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .nav-inner {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+
+        .logo-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .logo-text {
+
+            color: #082f60;
+
+            font-size: 17px;
+
+            font-weight: 800;
+        }
+
+
+        .logo-text span {
+
+            color: #0874d1;
+        }
+
+
+        .back-services {
+
+            color: #0754a0;
+
+            text-decoration: none;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        /* MAIN */
+
+        .service-main {
+
+            width: 92%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 40px 0 70px;
+        }
+
+
+        .breadcrumb {
+
+            font-size: 8px;
+
+            color: #8193a4;
+
+            margin-bottom: 20px;
+        }
+
+
+        .breadcrumb a {
+
+            color: #0754a0;
+
+            text-decoration: none;
+        }
+
+
+        /* HERO */
+
+        .service-hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0874d1
+                );
+
+            border-radius: 24px;
+
+            padding: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            color: white;
+
+            box-shadow:
+                0 18px 40px
+                rgba(7,84,160,.15);
+        }
+
+
+        .service-hero-icon {
+
+            width: 90px;
+
+            height: 90px;
+
+            flex-shrink: 0;
+
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,.14);
+
+            border:
+                1px solid
+                rgba(255,255,255,.20);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 34px;
+        }
+
+
+        .service-hero h1 {
+
+            margin: 0;
+
+            font-size: 28px;
+        }
+
+
+        .service-hero p {
+
+            margin: 8px 0 0;
+
+            color:
+                rgba(255,255,255,.78);
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+            max-width: 650px;
+        }
+
+
+        /* CONTENT */
+
+        .service-content {
+
+            margin-top: 22px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .service-card {
+
+            background: white;
+
+            border:
+                1px solid #e0e9f2;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card-header {
+
+            padding: 18px 21px;
+
+            border-bottom:
+                1px solid #edf1f5;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .card-header-icon {
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 10px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 10px;
+        }
+
+
+        .card-header h2 {
+
+            margin: 0;
+
+            color: #294a64;
+
+            font-size: 12px;
+        }
+
+
+        .card-body {
+
+            padding: 21px;
+        }
+
+
+        /* LIST */
+
+        .service-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+        }
+
+
+        .service-list li {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+
+            padding: 11px 0;
+
+            border-bottom:
+                1px solid #edf1f5;
+
+            color: #718497;
+
+            font-size: 8px;
+
+            line-height: 1.6;
+        }
+
+
+        .service-list li:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .service-list i {
+
+            color: #0874d1;
+
+            margin-top: 2px;
+        }
+
+
+        /* PREPARATION */
+
+        .preparation-box {
+
+            background: #f5f9fd;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .preparation-box:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .preparation-box strong {
+
+            color: #49647b;
+
+            display: block;
+
+            font-size: 8px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .preparation-box span {
+
+            color: #8495a5;
+
+            font-size: 7px;
+
+            line-height: 1.6;
+        }
+
+
+        /* INFO */
+
+        .info-row {
+
+            display: flex;
+
+            gap: 10px;
+
+            padding: 12px 0;
+
+            border-bottom:
+                1px solid #edf1f5;
+        }
+
+
+        .info-row:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .info-row i {
+
+            width: 20px;
+
+            color: #0874d1;
+
+            font-size: 10px;
+        }
+
+
+        .info-row div strong {
+
+            display: block;
+
+            color: #536b80;
+
+            font-size: 8px;
+        }
+
+
+        .info-row div span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #8798a8;
+
+            font-size: 7px;
+
+        }
+
+
+        /* APPOINTMENT */
+
+        .appointment-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef7ff,
+                    #f8fbff
+                );
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            text-align: center;
+        }
+
+
+        .appointment-box h3 {
+
+            color: #294a64;
+
+            font-size: 12px;
+
+            margin: 0 0 7px;
+        }
+
+
+        .appointment-box p {
+
+            color: #8495a5;
+
+            font-size: 7px;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+        }
+
+
+        .appointment-btn {
+
+            width: 100%;
+
+            height: 40px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #0754a0;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        .appointment-btn:hover {
+
+            background: #063f7b;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .service-content {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .service-hero {
+
+                padding: 28px 22px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .service-main {
+
+                padding-top: 25px;
+            }
+
+
+            .service-hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                border-radius: 18px;
+            }
+
+
+            .service-hero h1 {
+
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="service-navbar">
+
+    <div class="nav-inner">
+
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="services.html"
+           class="back-services">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Services
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="service-main">
+
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        &nbsp; / &nbsp;
+
+        <a href="services.html">
+            Services
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Service Details
+
+    </div>
+
+
+
+    <!-- HERO -->
+
+    <section class="service-hero">
+
+
+        <div class="service-hero-icon"
+             id="serviceIcon">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+        </div>
+
+
+        <div>
+
+            <h1 id="serviceTitle">
+                General Consultation
+            </h1>
+
+
+            <p id="serviceDescription">
+
+                Professional medical consultation
+                and healthcare guidance from our
+                experienced medical professionals.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- CONTENT -->
+
+    <div class="service-content">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+            <!-- AVAILABLE SERVICES -->
+
+            <section class="service-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Available Services
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <ul
+                        class="service-list"
+                        id="serviceList">
+
+                    </ul>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PREPARATION -->
+
+            <section class="service-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Preparation Instructions
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body"
+                     id="preparation">
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div>
+
+
+            <!-- INFORMATION -->
+
+            <section class="service-card">
+
+
+                <div class="card-header">
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Service Information
+                    </h2>
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <div>
+
+                            <strong>
+                                Operating Hours
+                            </strong>
+
+                            <span id="hours">
+                                Monday – Saturday,
+                                8:00 AM – 6:00 PM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <div>
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <span>
+                                Medi House,
+                                Main Healthcare Building
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <div>
+
+                            <strong>
+                                Contact
+                            </strong>
+
+                            <span>
+                                +94 11 234 5678
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- BOOKING -->
+
+            <section class="service-card">
+
+
+                <div class="card-body">
+
+
+                    <div class="appointment-box">
+
+                        <h3>
+                            Need This Service?
+                        </h3>
+
+
+                        <p>
+
+                            Registered patients can
+                            access appointments and
+                            service-related information
+                            through their account.
+
+                        </p>
+
+
+                        <button
+                            class="appointment-btn"
+                            onclick="goLogin()">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            Login to Continue
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+
+    /* =========================
+       SERVICE DATA
+       ========================= */
+
+
+    const services = {
+
+
+        general: {
+
+            title:
+                "General Consultation",
+
+            icon:
+                "fa-stethoscope",
+
+            description:
+                "Consult with our medical professionals for general health concerns, diagnosis and treatment guidance.",
+
+            list: [
+
+                "General health consultations",
+
+                "Initial health assessments",
+
+                "Diagnosis and treatment guidance",
+
+                "Blood pressure and vital checks",
+
+                "Health advice and follow-up consultations"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Before your visit",
+
+                    text:
+                        "Bring previous medical reports, prescriptions and relevant health information."
+                },
+
+                {
+                    title: "Important",
+
+                    text:
+                        "Please arrive a few minutes before your scheduled consultation."
+                }
+
+            ],
+
+            hours:
+                "Monday – Saturday, 8:00 AM – 6:00 PM"
+
+        },
+
+
+        dental: {
+
+            title:
+                "Dental Care",
+
+            icon:
+                "fa-tooth",
+
+            description:
+                "Professional dental services focused on maintaining healthy teeth, gums and overall oral health.",
+
+            list: [
+
+                "Dental consultations",
+
+                "Routine dental examinations",
+
+                "Teeth cleaning",
+
+                "Oral health guidance",
+
+                "Basic dental treatments"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Before your visit",
+
+                    text:
+                        "Maintain your normal oral hygiene routine before attending your appointment."
+                },
+
+                {
+                    title: "Previous records",
+
+                    text:
+                        "Bring previous dental reports if available."
+                }
+
+            ],
+
+            hours:
+                "Tuesday – Saturday, 9:00 AM – 6:00 PM"
+
+        },
+
+
+        scanning: {
+
+            title:
+                "Scanning",
+
+            icon:
+                "fa-microscope",
+
+            description:
+                "Diagnostic imaging services using modern equipment to support accurate medical assessment.",
+
+            list: [
+
+                "Ultrasound scanning",
+
+                "CT scanning",
+
+                "MRI services",
+
+                "Diagnostic imaging",
+
+                "Professional scan reporting"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Follow instructions",
+
+                    text:
+                        "Preparation requirements depend on the type of scan. Follow the instructions provided by the medical staff."
+                },
+
+                {
+                    title: "Medical information",
+
+                    text:
+                        "Inform staff about previous medical conditions and relevant medications."
+                }
+
+            ],
+
+            hours:
+                "Monday – Saturday, 8:00 AM – 5:00 PM"
+
+        },
+
+
+        laboratory: {
+
+            title:
+                "Laboratory",
+
+            icon:
+                "fa-flask",
+
+            description:
+                "Reliable laboratory testing services supporting diagnosis, monitoring and treatment decisions.",
+
+            list: [
+
+                "Blood tests",
+
+                "Urine tests",
+
+                "Biochemistry testing",
+
+                "Routine health screening",
+
+                "Laboratory reports"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Fasting tests",
+
+                    text:
+                        "Some laboratory tests may require fasting. Follow the instructions provided by the medical staff."
+                },
+
+                {
+                    title: "Bring your request",
+
+                    text:
+                        "Bring your laboratory request or doctor's referral when required."
+                }
+
+            ],
+
+            hours:
+                "Monday – Saturday, 7:30 AM – 5:00 PM"
+
+        },
+
+
+        xray: {
+
+            title:
+                "X-Ray",
+
+            icon:
+                "fa-x-ray",
+
+            description:
+                "Professional X-ray imaging services to assist doctors with accurate diagnosis.",
+
+            list: [
+
+                "Digital X-ray imaging",
+
+                "Chest X-ray",
+
+                "Bone and joint imaging",
+
+                "Diagnostic imaging",
+
+                "X-ray reporting"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Before the X-ray",
+
+                    text:
+                        "Follow any preparation instructions provided by the medical staff."
+                },
+
+                {
+                    title: "Important",
+
+                    text:
+                        "Inform staff if you are pregnant or think you may be pregnant."
+                }
+
+            ],
+
+            hours:
+                "Monday – Saturday, 8:00 AM – 5:00 PM"
+
+        },
+
+
+        pharmacy: {
+
+            title:
+                "Pharmacy",
+
+            icon:
+                "fa-pills",
+
+            description:
+                "Convenient access to prescribed medicines with professional pharmacy support.",
+
+            list: [
+
+                "Prescription medicine dispensing",
+
+                "Medicine instructions",
+
+                "Prescription verification",
+
+                "Medicine availability information",
+
+                "Pharmacy assistance"
+
+            ],
+
+            preparation: [
+
+                {
+                    title: "Prescription",
+
+                    text:
+                        "Bring your valid prescription when collecting prescribed medicines."
+                },
+
+                {
+                    title: "Medicine information",
+
+                    text:
+                        "Inform pharmacy staff about any known allergies or medicines you currently use."
+                }
+
+            ],
+
+            hours:
+                "Monday – Saturday, 8:00 AM – 7:00 PM"
+
+        }
+
+    };
+
+
+
+    /* =========================
+       LOAD SERVICE
+       ========================= */
+
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const serviceName =
+        params.get("service") || "general";
+
+
+    const service =
+        services[serviceName] ||
+        services.general;
+
+
+
+    /* TITLE */
+
+    document
+        .getElementById("serviceTitle")
+        .textContent =
+        service.title;
+
+
+
+    /* DESCRIPTION */
+
+    document
+        .getElementById("serviceDescription")
+        .textContent =
+        service.description;
+
+
+
+    /* ICON */
+
+    document
+        .getElementById("serviceIcon")
+        .innerHTML =
+        `<i class="fa-solid ${service.icon}"></i>`;
+
+
+
+    /* HOURS */
+
+    document
+        .getElementById("hours")
+        .textContent =
+        service.hours;
+
+
+
+    /* SERVICE LIST */
+
+    const serviceList =
+        document.getElementById(
+            "serviceList"
+        );
+
+
+    serviceList.innerHTML = "";
+
+
+    service.list.forEach(
+        function(item) {
+
+            serviceList.innerHTML += `
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <span>${item}</span>
+
+                </li>
+
+            `;
+
+        }
+    );
+
+
+
+    /* PREPARATION */
+
+    const preparation =
+        document.getElementById(
+            "preparation"
+        );
+
+
+    preparation.innerHTML = "";
+
+
+    service.preparation.forEach(
+        function(item) {
+
+            preparation.innerHTML += `
+
+                <div class="preparation-box">
+
+                    <strong>
+                        ${item.title}
+                    </strong>
+
+                    <span>
+                        ${item.text}
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+
+    /* LOGIN */
+
+    function goLogin() {
+
+        window.location.href =
+            "login.html";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

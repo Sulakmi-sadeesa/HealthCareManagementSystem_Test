@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f8fc;
+            font-family: "Inter", sans-serif;
+            color: #24445e;
+        }
+
+        /* NAVBAR */
+
+        .services-navbar {
+            height: 76px;
+            background: white;
+            border-bottom: 1px solid #e2eaf3;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #0754a0;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            color: #082f60;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            color: #0874d1;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #0754a0;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        /* MAIN */
+
+        .services-main {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 50px 0 75px;
+        }
+
+        .services-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .services-heading span {
+            color: #0874d1;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .services-heading h1 {
+            color: #082f60;
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .services-heading p {
+            color: #7c8d9e;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        /* SERVICE GRID */
+
+        .service-grid {
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e0e9f2;
+            border-radius: 20px;
+
+            padding: 25px;
+
+            text-decoration: none;
+
+            transition: .25s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            right: -35px;
+            bottom: -35px;
+
+            border-radius: 50%;
+
+            background: #edf6ff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 16px 35px
+                rgba(7,84,160,.10);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+
+            border-radius: 16px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h2 {
+            color: #294a64;
+
+            font-size: 14px;
+
+            margin: 0 0 9px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            color: #8293a3;
+
+            font-size: 8px;
+
+            line-height: 1.7;
+
+            margin: 0 0 18px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-link {
+            color: #0874d1;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-link i {
+            margin-left: 5px;
+        }
+
+        /* INFO */
+
+        .service-info {
+            margin-top: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #062d62,
+                    #0874d1
+                );
+
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .service-info h2 {
+            margin: 0 0 8px;
+
+            font-size: 17px;
+        }
+
+        .service-info p {
+            margin: 0;
+
+            max-width: 600px;
+
+            color: rgba(255,255,255,.78);
+
+            font-size: 8px;
+
+            line-height: 1.7;
+        }
+
+        .service-info-icon {
+            width: 65px;
+            height: 65px;
+
+            flex-shrink: 0;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.13);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .services-main {
+                padding-top: 35px;
+            }
+
+            .services-heading h1 {
+                font-size: 28px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="services-navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+            <div class="logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="index.html"
+           class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="services-main">
+
+
+    <div class="services-heading">
+
+        <span>
+            Healthcare Services
+        </span>
+
+        <h1>
+            Our Services
+        </h1>
+
+        <p>
+            Medi House provides a range of reliable
+            healthcare services delivered by qualified
+            professionals using modern facilities.
+        </p>
+
+    </div>
+
+
+
+    <!-- SERVICE CARDS -->
+
+    <div class="service-grid">
+
+
+        <!-- 1 -->
+
+        <a href="service-details.html?service=general"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-stethoscope"></i>
+
+            </div>
+
+            <h2>
+                General Consultation
+            </h2>
+
+            <p>
+                Consult with our medical professionals
+                for general health concerns, diagnosis
+                and treatment guidance.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 2 -->
+
+        <a href="service-details.html?service=dental"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-tooth"></i>
+
+            </div>
+
+            <h2>
+                Dental Care
+            </h2>
+
+            <p>
+                Professional dental services including
+                consultations, preventive care and
+                oral health treatments.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 3 -->
+
+        <a href="service-details.html?service=scanning"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-microscope"></i>
+
+            </div>
+
+            <h2>
+                Scanning
+            </h2>
+
+            <p>
+                Diagnostic imaging services supported
+                by modern scanning equipment and
+                professional staff.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 4 -->
+
+        <a href="service-details.html?service=laboratory"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-flask"></i>
+
+            </div>
+
+            <h2>
+                Laboratory
+            </h2>
+
+            <p>
+                Accurate laboratory testing to support
+                diagnosis, monitoring and treatment.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 5 -->
+
+        <a href="service-details.html?service=xray"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-x-ray"></i>
+
+            </div>
+
+            <h2>
+                X-Ray
+            </h2>
+
+            <p>
+                Reliable X-ray imaging services with
+                professional assistance and clear
+                diagnostic reporting.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 6 -->
+
+        <a href="service-details.html?service=pharmacy"
+           class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-pills"></i>
+
+            </div>
+
+            <h2>
+                Pharmacy
+            </h2>
+
+            <p>
+                Convenient access to prescribed
+                medicines and professional pharmacy
+                support.
+            </p>
+
+            <div class="service-link">
+
+                Explore Service
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- INFO -->
+
+    <section class="service-info">
+
+        <div>
+
+            <h2>
+                Need help choosing a service?
+            </h2>
+
+            <p>
+                Our Medi AI Assistant can help you
+                find the right department, understand
+                our available services and provide
+                general information about Medi House.
+            </p>
+
+        </div>
+
+
+        <div class="service-info-icon">
+
+            <i class="fa-solid fa-robot"></i>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

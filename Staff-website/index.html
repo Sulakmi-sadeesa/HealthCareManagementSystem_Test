@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medi House Staff Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#eef5fc;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container{
+width:1100px;
+height:650px;
+background:#fff;
+border-radius:25px;
+overflow:hidden;
+display:grid;
+grid-template-columns:1fr 1fr;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+}
+
+/* Left */
+
+.left{
+background:linear-gradient(135deg,#032B63,#0A73D8);
+color:#fff;
+padding:50px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo i{
+font-size:30px;
+}
+
+.logo h2{
+font-size:26px;
+font-weight:800;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+line-height:1.2;
+}
+
+.hero p{
+opacity:.9;
+line-height:1.8;
+}
+
+.features{
+display:grid;
+gap:15px;
+margin-top:35px;
+}
+
+.feature{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.feature i{
+width:40px;
+height:40px;
+background:rgba(255,255,255,.15);
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* Right */
+
+.right{
+padding:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.login-box{
+width:100%;
+max-width:360px;
+}
+
+.login-box h2{
+font-size:30px;
+color:#082F60;
+margin-bottom:8px;
+}
+
+.login-box p{
+color:#70839A;
+margin-bottom:30px;
+}
+
+.input{
+margin-bottom:18px;
+}
+
+.input label{
+display:block;
+font-size:14px;
+margin-bottom:8px;
+color:#37526E;
+font-weight:600;
+}
+
+.input input,
+.input select{
+width:100%;
+height:48px;
+border:1px solid #D8E4F0;
+border-radius:10px;
+padding:0 14px;
+font-size:15px;
+outline:none;
+}
+
+button{
+width:100%;
+height:50px;
+border:none;
+border-radius:10px;
+background:#0754A0;
+color:#fff;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover{
+background:#053E78;
+}
+
+.note{
+margin-top:18px;
+font-size:13px;
+color:#7D8E9F;
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+height:auto;
+width:95%;
+}
+
+.left{
+display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<div class="logo">
+<i class="fa-solid fa-hospital"></i>
+<h2>MEDI HOUSE</h2>
+</div>
+
+<div class="hero">
+<h1>Staff Portal</h1>
+<p>
+Secure access for Reception, Doctors,
+Laboratory, X-Ray, Scan and Administrative staff.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<i class="fa-solid fa-user-plus"></i>
+<span>Patient Registration</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-calendar-check"></i>
+<span>Appointment Management</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-file-medical"></i>
+<span>Medical Records</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-shield"></i>
+<span>Role Based Access</span>
+</div>
+
+</div>
+
+</div>
+
+<div>
+© 2026 Medi House
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="login-box">
+
+<h2>Staff Login</h2>
+<p>Sign in with your employee account.</p>
+
+<div class="input">
+<label>Employee ID</label>
+<input type="text" placeholder="EMP001">
+</div>
+
+<div class="input">
+<label>Password</label>
+<input type="password" placeholder="••••••••">
+</div>
+
+<div class="input">
+<label>Department</label>
+<select id="role">
+<option value="reception">Reception</option>
+<option value="doctor">Doctor</option>
+<option value="xray">X-Ray</option>
+<option value="scan">Scan</option>
+<option value="lab">Laboratory</option>
+<option value="admin">Admin</option>
+</select>
+</div>
+
+<button onclick="loginStaff()">
+<i class="fa-solid fa-right-to-bracket"></i>
+ Login
+</button>
+
+<div class="note">
+Role-based access will be verified by Java + Hibernate.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function loginStaff(){
+
+const role=document.getElementById("role").value;
+
+if(role==="reception")
+location.href="reception.html";
+
+else if(role==="doctor")
+location.href="doctor.html";
+
+else if(role==="xray")
+location.href="xray.html";
+
+else if(role==="scan")
+location.href="scan.html";
+
+else if(role==="lab")
+location.href="laboratory.html";
+
+else
+location.href="admin.html";
+
+}
+
+</script>
+
+</body>
+</html>

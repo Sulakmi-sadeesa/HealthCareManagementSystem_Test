@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reception Dashboard | Medi House</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#EEF5FC;
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#032B63;
+color:white;
+padding:25px 18px;
+position:fixed;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:35px;
+}
+
+.logo i{
+font-size:26px;
+}
+
+.logo h2{
+font-size:22px;
+font-weight:800;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+padding:14px;
+border-radius:10px;
+display:flex;
+align-items:center;
+gap:12px;
+transition:.2s;
+}
+
+.menu a:hover,
+.menu .active{
+background:#0A73D8;
+}
+
+.logout{
+position:absolute;
+bottom:25px;
+left:18px;
+right:18px;
+background:#0A73D8;
+text-align:center;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+/* Main */
+
+.main{
+margin-left:250px;
+width:calc(100% - 250px);
+padding:30px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.header h1{
+color:#082F60;
+font-size:30px;
+}
+
+.user{
+background:white;
+padding:10px 16px;
+border-radius:12px;
+font-weight:600;
+color:#35506C;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.card i{
+font-size:24px;
+color:#0754A0;
+margin-bottom:12px;
+}
+
+.card h2{
+font-size:26px;
+color:#082F60;
+}
+
+.card span{
+font-size:13px;
+color:#70839A;
+}
+
+/* Layout */
+
+.grid{
+display:grid;
+grid-template-columns:1.3fr .7fr;
+gap:22px;
+}
+
+.panel{
+background:white;
+border-radius:18px;
+padding:22px;
+}
+
+.panel h3{
+color:#082F60;
+margin-bottom:18px;
+}
+
+/* Form */
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:7px;
+font-size:14px;
+font-weight:600;
+color:#36516C;
+}
+
+.form-group input,
+.form-group select{
+width:100%;
+height:44px;
+border:1px solid #D8E4F0;
+border-radius:10px;
+padding:0 12px;
+outline:none;
+}
+
+.two{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.btn{
+width:100%;
+height:45px;
+border:none;
+border-radius:10px;
+background:#0754A0;
+color:white;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* Search */
+
+.search{
+display:flex;
+gap:10px;
+margin-bottom:18px;
+}
+
+.search input{
+flex:1;
+height:42px;
+border:1px solid #D8E4F0;
+border-radius:10px;
+padding:0 12px;
+}
+
+.search button{
+width:45px;
+border:none;
+border-radius:10px;
+background:#0754A0;
+color:white;
+}
+
+.patient{
+border:1px solid #E4EDF5;
+border-radius:12px;
+padding:14px;
+margin-bottom:12px;
+}
+
+.patient strong{
+display:block;
+color:#193C5B;
+}
+
+.patient span{
+font-size:13px;
+color:#6F8498;
+}
+
+.token{
+margin-top:20px;
+background:#EDF6FF;
+padding:18px;
+border-radius:12px;
+text-align:center;
+}
+
+.token h2{
+font-size:34px;
+color:#0754A0;
+margin:8px 0;
+}
+
+@media(max-width:1100px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:750px){
+
+.sidebar{
+display:none;
+}
+
+.main{
+margin:0;
+width:100%;
+padding:20px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.two{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+<i class="fa-solid fa-hospital"></i>
+<h2>MEDI HOUSE</h2>
+</div>
+
+<div class="menu">
+
+<a class="active" href="#">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+
+<a href="#">
+<i class="fa-solid fa-user-plus"></i>
+Register Patient
+</a>
+
+<a href="#">
+<i class="fa-solid fa-calendar-check"></i>
+Book Appointment
+</a>
+
+<a href="#">
+<i class="fa-solid fa-qrcode"></i>
+Generate QR
+</a>
+
+<a href="#">
+<i class="fa-solid fa-magnifying-glass"></i>
+Search Patient
+</a>
+
+</div>
+
+<a href="index.html" class="logout">
+Logout
+</a>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="header">
+<h1>Reception Dashboard</h1>
+
+<div class="user">
+<i class="fa-solid fa-user"></i>
+ Reception Staff
+</div>
+</div>
+
+<!-- Cards -->
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h2>284</h2>
+<span>Registered Patients</span>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-calendar-day"></i>
+<h2>42</h2>
+<span>Today's Appointments</span>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-user-check"></i>
+<h2>19</h2>
+<span>Checked In</span>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-clock"></i>
+<h2>08</h2>
+<span>Waiting Patients</span>
+</div>
+
+</div>
+
+<!-- Grid -->
+
+<div class="grid">
+
+<!-- Register -->
+
+<div class="panel">
+
+<h3>
+Register New Patient
+</h3>
+
+<div class="two">
+
+<div class="form-group">
+<label>First Name</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Last Name</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="two">
+
+<div class="form-group">
+<label>NIC</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Phone</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email">
+</div>
+
+<div class="form-group">
+<label>Address</label>
+<input type="text">
+</div>
+
+<div class="two">
+
+<div class="form-group">
+<label>Gender</label>
+<select>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+</div>
+
+<button class="btn" onclick="registerPatient()">
+Create Patient & Generate QR
+</button>
+
+</div>
+
+<!-- Search -->
+
+<div class="panel">
+
+<h3>
+Patient Search
+</h3>
+
+<div class="search">
+
+<input type="text"
+placeholder="Patient ID / NIC">
+
+<button>
+<i class="fa-solid fa-search"></i>
+</button>
+
+</div>
+
+<div class="patient">
+
+<strong>
+Kavindi Perera
+</strong>
+
+<span>
+Patient ID : MH-00482
+</span>
+
+<br><br>
+
+<span>
+NIC : 200225600123
+</span>
+
+</div>
+
+<div class="token">
+
+<div>
+Current Channel
+</div>
+
+<h2>
+C-023
+</h2>
+
+<p>
+Dental Department
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function registerPatient(){
+
+alert(
+"Patient Registered Successfully!\n\nPatient ID : MH-00483\nQR Generated."
+);
+
+}
+
+</script>
+
+</body>
+</html>

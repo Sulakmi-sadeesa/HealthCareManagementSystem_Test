@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Appointments | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        body {
+            background: #f5f8fc;
+        }
+
+
+        /* ===============================
+           NAVBAR
+           =============================== */
+
+        .page-navbar {
+
+            height: 78px;
+
+            background: white;
+
+            border-bottom: 1px solid #e5edf5;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        .page-nav-inner {
+
+            width: 92%;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .page-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+        }
+
+
+        .page-logo-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .page-logo-text {
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color: #082f60;
+
+        }
+
+
+        .page-logo-text span {
+
+            color: #0874d1;
+
+        }
+
+
+        .back-dashboard {
+
+            color: #0754a0;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+        }
+
+
+        /* ===============================
+           MAIN
+           =============================== */
+
+        .appointments-main {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 40px 0 70px;
+
+        }
+
+
+        .page-heading {
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .page-heading span {
+
+            color: #0870c8;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .page-heading h1 {
+
+            color: #082f60;
+
+            font-size: 32px;
+
+            margin: 8px 0;
+
+        }
+
+
+        .page-heading p {
+
+            color: #718399;
+
+            font-size: 12px;
+
+        }
+
+
+        /* ===============================
+           TABS
+           =============================== */
+
+        .appointment-tabs {
+
+            background: white;
+
+            border: 1px solid #e1eaf3;
+
+            border-radius: 14px;
+
+            padding: 5px;
+
+            display: inline-flex;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .appointment-tab {
+
+            border: none;
+
+            background: transparent;
+
+            padding: 11px 22px;
+
+            border-radius: 10px;
+
+            color: #718399;
+
+            font-family: inherit;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .appointment-tab.active {
+
+            background: #0754a0;
+
+            color: white;
+
+            box-shadow:
+                0 5px 15px rgba(7,84,160,0.18);
+
+        }
+
+
+        /* ===============================
+           APPOINTMENT LIST
+           =============================== */
+
+        .appointments-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+        }
+
+
+        .appointment-item {
+
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            display: grid;
+
+            grid-template-columns:
+                2fr
+                1.2fr
+                1fr
+                auto;
+
+            gap: 20px;
+
+            align-items: center;
+
+            transition: 0.2s;
+
+        }
+
+
+        .appointment-item:hover {
+
+            border-color: #c9def1;
+
+            box-shadow:
+                0 10px 30px rgba(9,54,105,0.05);
+
+        }
+
+
+        /* DOCTOR */
+
+        .doctor-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .doctor-avatar {
+
+            width: 54px;
+
+            height: 54px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e4f3ff,
+                    #c8e6fa
+                );
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 21px;
+
+        }
+
+
+        .doctor-info strong {
+
+            display: block;
+
+            color: #1e3b55;
+
+            font-size: 13px;
+
+        }
+
+
+        .doctor-info span {
+
+            display: block;
+
+            color: #8495a8;
+
+            font-size: 10px;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* DATE */
+
+        .appointment-date {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .appointment-date-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 10px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .appointment-date strong {
+
+            display: block;
+
+            color: #29445e;
+
+            font-size: 11px;
+
+        }
+
+
+        .appointment-date span {
+
+            display: block;
+
+            color: #8a9bac;
+
+            font-size: 9px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* CHANNEL */
+
+        .appointment-channel span {
+
+            display: block;
+
+            color: #8a9bac;
+
+            font-size: 9px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .appointment-channel strong {
+
+            color: #0754a0;
+
+            font-size: 14px;
+
+        }
+
+
+        /* STATUS */
+
+        .appointment-status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            border-radius: 20px;
+
+            padding: 6px 10px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .status-confirmed {
+
+            color: #08704a;
+
+            background: #e8f9f1;
+
+        }
+
+
+        .status-completed {
+
+            color: #46617d;
+
+            background: #edf2f7;
+
+        }
+
+
+        .status-cancelled {
+
+            color: #c34b4b;
+
+            background: #fff0f0;
+
+        }
+
+
+        /* FEE */
+
+        .appointment-fee {
+
+            margin-top: 7px;
+
+            color: #24425d;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        .appointment-fee small {
+
+            color: #8a9bac;
+
+            font-size: 8px;
+
+            font-weight: 400;
+
+        }
+
+
+        /* ACTIONS */
+
+        .appointment-actions {
+
+            display: flex;
+
+            gap: 7px;
+
+            flex-wrap: wrap;
+
+            justify-content: flex-end;
+
+        }
+
+
+        .appointment-btn {
+
+            border: none;
+
+            border-radius: 9px;
+
+            padding: 9px 12px;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-view {
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+        }
+
+
+        .btn-reschedule {
+
+            background: #f4f7fa;
+
+            color: #526b82;
+
+        }
+
+
+        .btn-cancel {
+
+            background: #fff0f0;
+
+            color: #c34b4b;
+
+        }
+
+
+        /* EMPTY */
+
+        .empty-state {
+
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            border-radius: 20px;
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            display: none;
+
+        }
+
+
+        .empty-state i {
+
+            width: 60px;
+
+            height: 60px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 15px;
+
+            font-size: 22px;
+
+        }
+
+
+        .empty-state h3 {
+
+            color: #24425d;
+
+            font-size: 15px;
+
+        }
+
+
+        .empty-state p {
+
+            color: #8798a9;
+
+            font-size: 10px;
+
+        }
+
+
+        /* ===============================
+           MOBILE
+           =============================== */
+
+        @media (max-width: 900px) {
+
+            .appointment-item {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .appointment-actions {
+
+                justify-content: flex-start;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .appointments-main {
+
+                padding-top: 28px;
+
+            }
+
+
+            .page-heading h1 {
+
+                font-size: 27px;
+
+            }
+
+
+            .appointment-tabs {
+
+                width: 100%;
+
+                display: grid;
+
+                grid-template-columns: repeat(3,1fr);
+
+            }
+
+
+            .appointment-tab {
+
+                padding: 10px 5px;
+
+            }
+
+
+            .appointment-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+
+                padding: 18px;
+
+            }
+
+
+            .appointment-actions {
+
+                justify-content: stretch;
+
+            }
+
+
+            .appointment-btn {
+
+                flex: 1;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===============================
+     NAVBAR
+     =============================== -->
+
+<header class="page-navbar">
+
+    <div class="page-nav-inner">
+
+
+        <a href="dashboard.html"
+           class="page-logo">
+
+            <div class="page-logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="page-logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="dashboard.html"
+           class="back-dashboard">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ===============================
+     MAIN
+     =============================== -->
+
+<main class="appointments-main">
+
+
+    <div class="page-heading">
+
+        <span>
+            Patient Portal
+        </span>
+
+        <h1>
+            My Appointments
+        </h1>
+
+        <p>
+            Manage your Medi House appointments in one place.
+        </p>
+
+    </div>
+
+
+
+    <!-- TABS -->
+
+    <div class="appointment-tabs">
+
+        <button
+            class="appointment-tab active"
+            onclick="showTab('upcoming', this)">
+
+            Upcoming
+
+        </button>
+
+
+        <button
+            class="appointment-tab"
+            onclick="showTab('completed', this)">
+
+            Completed
+
+        </button>
+
+
+        <button
+            class="appointment-tab"
+            onclick="showTab('cancelled', this)">
+
+            Cancelled
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ===============================
+         UPCOMING
+         =============================== -->
+
+    <div
+        id="upcoming"
+        class="appointments-list">
+
+
+        <!-- APPOINTMENT 1 -->
+
+        <div class="appointment-item">
+
+
+            <div class="doctor-info">
+
+                <div class="doctor-avatar">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Dr. Perera
+                    </strong>
+
+                    <span>
+                        Dental Department
+                    </span>
+
+
+                    <div class="appointment-status status-confirmed">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Confirmed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-date">
+
+                <div class="appointment-date-icon">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        16 August 2026
+                    </strong>
+
+                    <span>
+                        4:00 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-channel">
+
+                <span>
+                    Channel
+                </span>
+
+                <strong>
+                    C-023
+                </strong>
+
+
+                <div class="appointment-fee">
+
+                    Rs. 2,500
+
+                    <small>
+                        Consultation
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-btn btn-view"
+                    onclick="viewAppointment('Dental Consultation')">
+
+                    <i class="fa-regular fa-eye"></i>
+                    View
+
+                </button>
+
+
+                <button
+                    class="appointment-btn btn-reschedule"
+                    onclick="rescheduleAppointment()">
+
+                    Reschedule
+
+                </button>
+
+
+                <button
+                    class="appointment-btn btn-cancel"
+                    onclick="cancelAppointment(this)">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- APPOINTMENT 2 -->
+
+        <div class="appointment-item">
+
+
+            <div class="doctor-info">
+
+                <div class="doctor-avatar">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Dr. Silva
+                    </strong>
+
+                    <span>
+                        General Medicine
+                    </span>
+
+
+                    <div class="appointment-status status-confirmed">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Confirmed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-date">
+
+                <div class="appointment-date-icon">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        22 August 2026
+                    </strong>
+
+                    <span>
+                        10:30 AM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-channel">
+
+                <span>
+                    Channel
+                </span>
+
+                <strong>
+                    C-031
+                </strong>
+
+
+                <div class="appointment-fee">
+
+                    Rs. 2,000
+
+                    <small>
+                        Consultation
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-btn btn-view"
+                    onclick="viewAppointment('General Consultation')">
+
+                    <i class="fa-regular fa-eye"></i>
+                    View
+
+                </button>
+
+
+                <button
+                    class="appointment-btn btn-reschedule"
+                    onclick="rescheduleAppointment()">
+
+                    Reschedule
+
+                </button>
+
+
+                <button
+                    class="appointment-btn btn-cancel"
+                    onclick="cancelAppointment(this)">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         COMPLETED
+         =============================== -->
+
+    <div
+        id="completed"
+        class="appointments-list"
+        style="display:none;">
+
+
+        <div class="appointment-item">
+
+
+            <div class="doctor-info">
+
+                <div class="doctor-avatar">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Dr. Silva
+                    </strong>
+
+                    <span>
+                        General Medicine
+                    </span>
+
+
+                    <div class="appointment-status status-completed">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-date">
+
+                <div class="appointment-date-icon">
+
+                    <i class="fa-regular fa-calendar-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        05 August 2026
+                    </strong>
+
+                    <span>
+                        11:00 AM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-channel">
+
+                <span>
+                    Channel
+                </span>
+
+                <strong>
+                    C-012
+                </strong>
+
+
+                <div class="appointment-fee">
+
+                    Rs. 2,000
+
+                    <small>
+                        Paid
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-btn btn-view"
+                    onclick="viewAppointment('General Consultation')">
+
+                    <i class="fa-regular fa-eye"></i>
+                    View
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="appointment-item">
+
+
+            <div class="doctor-info">
+
+                <div class="doctor-avatar">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Dr. Perera
+                    </strong>
+
+                    <span>
+                        Dental Department
+                    </span>
+
+
+                    <div class="appointment-status status-completed">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-date">
+
+                <div class="appointment-date-icon">
+
+                    <i class="fa-regular fa-calendar-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        28 July 2026
+                    </strong>
+
+                    <span>
+                        3:30 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-channel">
+
+                <span>
+                    Channel
+                </span>
+
+                <strong>
+                    C-018
+                </strong>
+
+
+                <div class="appointment-fee">
+
+                    Rs. 2,500
+
+                    <small>
+                        Paid
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-btn btn-view"
+                    onclick="viewAppointment('Dental Consultation')">
+
+                    <i class="fa-regular fa-eye"></i>
+                    View
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         CANCELLED
+         =============================== -->
+
+    <div
+        id="cancelled"
+        class="appointments-list"
+        style="display:none;">
+
+
+        <div class="appointment-item">
+
+
+            <div class="doctor-info">
+
+                <div class="doctor-avatar">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Dr. Fernando
+                    </strong>
+
+                    <span>
+                        General Medicine
+                    </span>
+
+
+                    <div class="appointment-status status-cancelled">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancelled
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-date">
+
+                <div class="appointment-date-icon">
+
+                    <i class="fa-regular fa-calendar-xmark"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        20 July 2026
+                    </strong>
+
+                    <span>
+                        2:00 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-channel">
+
+                <span>
+                    Channel
+                </span>
+
+                <strong>
+                    C-010
+                </strong>
+
+
+                <div class="appointment-fee">
+
+                    Rs. 2,000
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-actions">
+
+                <button
+                    class="appointment-btn btn-view"
+                    onclick="viewAppointment('General Consultation')">
+
+                    <i class="fa-regular fa-eye"></i>
+                    View
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</main>
+
+
+
+<script>
+
+    /* ======================================
+       TAB SWITCHING
+       ====================================== */
+
+    function showTab(tabName, clickedButton) {
+
+        const sections =
+            document.querySelectorAll(".appointments-list");
+
+        sections.forEach(function(section) {
+
+            section.style.display = "none";
+
+        });
+
+
+        document.getElementById(tabName)
+            .style.display = "flex";
+
+
+        const tabs =
+            document.querySelectorAll(".appointment-tab");
+
+        tabs.forEach(function(tab) {
+
+            tab.classList.remove("active");
+
+        });
+
+
+        clickedButton.classList.add("active");
+
+    }
+
+
+
+    /* ======================================
+       VIEW APPOINTMENT
+       ====================================== */
+
+    function viewAppointment(type) {
+
+        alert(
+            "Appointment Details\n\n" +
+            type +
+            "\n\nDetailed appointment information will be loaded from the database after Java + Hibernate integration."
+        );
+
+    }
+
+
+
+    /* ======================================
+       RESCHEDULE
+       ====================================== */
+
+    function rescheduleAppointment() {
+
+        alert(
+            "Reschedule feature will allow the patient to select a new available date and time."
+        );
+
+    }
+
+
+
+    /* ======================================
+       CANCEL
+       ====================================== */
+
+    function cancelAppointment(button) {
+
+        const confirmCancel =
+            confirm(
+                "Are you sure you want to cancel this appointment?"
+            );
+
+
+        if (confirmCancel) {
+
+            const appointment =
+                button.closest(".appointment-item");
+
+            appointment.style.opacity = "0.5";
+
+            button.disabled = true;
+
+            button.innerHTML =
+                "Cancelled";
+
+            button.style.cursor = "default";
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

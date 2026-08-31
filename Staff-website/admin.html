@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Medi House</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+   ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body{
+    background:#EEF5FC;
+    display:flex;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar{
+
+    width:250px;
+
+    height:100vh;
+
+    background:#032B63;
+
+    color:white;
+
+    padding:24px 18px;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+}
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:35px;
+}
+
+
+.logo i{
+
+    font-size:25px;
+}
+
+
+.logo h2{
+
+    font-size:22px;
+
+    font-weight:800;
+}
+
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+}
+
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    transition:.2s;
+}
+
+
+.menu a:hover,
+.menu .active{
+
+    background:#0A73D8;
+}
+
+
+.logout{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:18px;
+
+    right:18px;
+
+    background:#0A73D8;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.main{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:30px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+
+.header h1{
+
+    color:#082F60;
+
+    font-size:30px;
+}
+
+
+.admin-info{
+
+    background:white;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    color:#35506C;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.summary{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+}
+
+
+.card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.04);
+}
+
+
+.card i{
+
+    font-size:22px;
+
+    color:#0754A0;
+
+    margin-bottom:10px;
+}
+
+
+.card h2{
+
+    color:#082F60;
+
+    font-size:27px;
+
+    margin-bottom:3px;
+}
+
+
+.card span{
+
+    color:#70839A;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MAIN GRID
+   ========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+
+.panel{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+}
+
+
+.panel h3{
+
+    color:#082F60;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+   ========================= */
+
+.actions{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:12px;
+}
+
+
+.action{
+
+    border:1px solid #E1EAF3;
+
+    border-radius:12px;
+
+    padding:17px;
+
+    background:#FAFCFF;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.action:hover{
+
+    border-color:#0A73D8;
+
+    background:#F3F9FF;
+
+    transform:translateY(-2px);
+}
+
+
+.action i{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#EDF6FF;
+
+    color:#0754A0;
+
+    margin-bottom:10px;
+}
+
+
+.action strong{
+
+    display:block;
+
+    color:#28455F;
+
+    font-size:13px;
+}
+
+
+.action span{
+
+    display:block;
+
+    color:#8193A6;
+
+    font-size:10px;
+
+    margin-top:5px;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+.table-wrapper{
+
+    overflow-x:auto;
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+
+th{
+
+    text-align:left;
+
+    padding:12px;
+
+    background:#F5F9FD;
+
+    color:#71869B;
+
+    font-size:11px;
+}
+
+
+td{
+
+    padding:14px 12px;
+
+    border-bottom:1px solid #EDF1F5;
+
+    color:#38546C;
+
+    font-size:12px;
+}
+
+
+.status{
+
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    background:#E7F8EF;
+
+    color:#08704A;
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   ACTIVITY
+   ========================= */
+
+.activity{
+
+    display:flex;
+
+    gap:12px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #EDF1F5;
+}
+
+
+.activity:last-child{
+
+    border-bottom:none;
+}
+
+
+.activity-icon{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:10px;
+
+    background:#EDF6FF;
+
+    color:#0754A0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.activity strong{
+
+    display:block;
+
+    color:#35516B;
+
+    font-size:12px;
+}
+
+
+.activity span{
+
+    color:#8A9BAC;
+
+    font-size:10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:1050px){
+
+    .summary{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:20px;
+
+    }
+
+    .summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .actions{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     SIDEBAR
+     ========================= -->
+
+<div class="sidebar">
+
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>
+            MEDI HOUSE
+        </h2>
+
+    </div>
+
+
+    <div class="menu">
+
+
+        <a href="#"
+           class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-users"></i>
+
+            Patients
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            Doctors
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-user-gear"></i>
+
+            Staff
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-building"></i>
+
+            Departments
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Appointments
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+    </div>
+
+
+    <a href="index.html"
+       class="logout">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<div class="main">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+
+        <div class="admin-info">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            System Administrator
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUMMARY
+         ========================= -->
+
+    <div class="summary">
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>
+                1,284
+            </h2>
+
+            <span>
+                Total Patients
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            <h2>
+                38
+            </h2>
+
+            <span>
+                Doctors
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-gear"></i>
+
+            <h2>
+                64
+            </h2>
+
+            <span>
+                Staff Members
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h2>
+                96
+            </h2>
+
+            <span>
+                Today's Appointments
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         QUICK ACTIONS + ACTIVITY
+         ========================= -->
+
+    <div class="grid">
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="panel">
+
+            <h3>
+                Quick Management
+            </h3>
+
+
+            <div class="actions">
+
+
+                <div class="action"
+                     onclick="adminMessage('Patient Management')">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <strong>
+                        Manage Patients
+                    </strong>
+
+                    <span>
+                        View and manage patient records
+                    </span>
+
+                </div>
+
+
+                <div class="action"
+                     onclick="adminMessage('Doctor Management')">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <strong>
+                        Manage Doctors
+                    </strong>
+
+                    <span>
+                        Add doctors and schedules
+                    </span>
+
+                </div>
+
+
+                <div class="action"
+                     onclick="adminMessage('Staff Management')">
+
+                    <i class="fa-solid fa-users-gear"></i>
+
+                    <strong>
+                        Manage Staff
+                    </strong>
+
+                    <span>
+                        Manage staff accounts and roles
+                    </span>
+
+                </div>
+
+
+                <div class="action"
+                     onclick="adminMessage('Department Management')">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <strong>
+                        Departments
+                    </strong>
+
+                    <span>
+                        Manage hospital departments
+                    </span>
+
+                </div>
+
+
+                <div class="action"
+                     onclick="adminMessage('Appointment Management')">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <strong>
+                        Appointments
+                    </strong>
+
+                    <span>
+                        View all appointments
+                    </span>
+
+                </div>
+
+
+                <div class="action"
+                     onclick="adminMessage('System Settings')">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <strong>
+                        System Settings
+                    </strong>
+
+                    <span>
+                        Configure Medi House
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIVITY -->
+
+        <div class="panel">
+
+            <h3>
+                Recent Activity
+            </h3>
+
+
+            <div class="activity">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        New patient registered
+                    </strong>
+
+                    <span>
+                        MH-00486 • 10 minutes ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Laboratory report uploaded
+                    </strong>
+
+                    <span>
+                        MH-00482 • 25 minutes ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-x-ray"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        X-Ray report completed
+                    </strong>
+
+                    <span>
+                        MH-00481 • 40 minutes ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-prescription"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Prescription created
+                    </strong>
+
+                    <span>
+                        Dr. Silva • 1 hour ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         STAFF TABLE
+         ========================= -->
+
+    <div class="panel">
+
+        <h3>
+            Staff Overview
+        </h3>
+
+
+        <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Staff ID
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Role
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <tr>
+
+                    <td>
+                        EMP001
+                    </td>
+
+                    <td>
+                        Amaya Silva
+                    </td>
+
+                    <td>
+                        Doctor
+                    </td>
+
+                    <td>
+                        Dental
+                    </td>
+
+                    <td>
+
+                        <span class="status">
+                            Active
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        EMP014
+                    </td>
+
+                    <td>
+                        Nadeesha Perera
+                    </td>
+
+                    <td>
+                        Receptionist
+                    </td>
+
+                    <td>
+                        Reception
+                    </td>
+
+                    <td>
+
+                        <span class="status">
+                            Active
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        EMP021
+                    </td>
+
+                    <td>
+                        Kasun Fernando
+                    </td>
+
+                    <td>
+                        Lab Technician
+                    </td>
+
+                    <td>
+                        Laboratory
+                    </td>
+
+                    <td>
+
+                        <span class="status">
+                            Active
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        EMP028
+                    </td>
+
+                    <td>
+                        Tharindu Silva
+                    </td>
+
+                    <td>
+                        X-Ray Technician
+                    </td>
+
+                    <td>
+                        X-Ray
+                    </td>
+
+                    <td>
+
+                        <span class="status">
+                            Active
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+function adminMessage(section){
+
+    alert(
+        section +
+        "\n\n" +
+        "This management section will be connected to Java + Hibernate + MySQL."
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

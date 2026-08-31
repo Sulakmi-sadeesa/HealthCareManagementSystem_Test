@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laboratory Dashboard | Medi House</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#EEF5FC;
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#032B63;
+color:white;
+padding:24px 18px;
+position:fixed;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:35px;
+}
+
+.logo h2{
+font-size:22px;
+font-weight:800;
+}
+
+.logo i{
+font-size:24px;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+padding:13px;
+border-radius:10px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.menu .active,
+.menu a:hover{
+background:#0A73D8;
+}
+
+.logout{
+position:absolute;
+bottom:20px;
+left:18px;
+right:18px;
+background:#0A73D8;
+text-align:center;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+/* Main */
+
+.main{
+margin-left:250px;
+width:calc(100% - 250px);
+padding:30px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.header h1{
+color:#082F60;
+font-size:30px;
+}
+
+.staff{
+background:white;
+padding:10px 15px;
+border-radius:12px;
+font-weight:600;
+color:#35506C;
+}
+
+/* Summary */
+
+.summary{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-bottom:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:18px;
+}
+
+.card i{
+font-size:22px;
+color:#0754A0;
+margin-bottom:10px;
+}
+
+.card h2{
+font-size:28px;
+color:#082F60;
+}
+
+.card span{
+font-size:13px;
+color:#70839A;
+}
+
+/* Grid */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:white;
+border-radius:18px;
+padding:22px;
+}
+
+.panel h3{
+margin-bottom:18px;
+color:#082F60;
+}
+
+/* Search */
+
+.search{
+display:flex;
+gap:10px;
+margin-bottom:18px;
+}
+
+.search input{
+flex:1;
+height:42px;
+border:1px solid #D8E4F0;
+border-radius:10px;
+padding:0 12px;
+outline:none;
+}
+
+.search button{
+width:45px;
+border:none;
+background:#0754A0;
+color:white;
+border-radius:10px;
+}
+
+/* Patient */
+
+.patient{
+padding:14px;
+border:1px solid #E4EDF5;
+border-radius:12px;
+margin-bottom:12px;
+cursor:pointer;
+}
+
+.patient:hover{
+background:#F7FBFF;
+border-color:#0A73D8;
+}
+
+.patient strong{
+display:block;
+color:#1D3C59;
+}
+
+.patient span{
+font-size:13px;
+color:#70839A;
+}
+
+/* Form */
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:7px;
+font-size:14px;
+font-weight:600;
+color:#35506C;
+}
+
+input,
+textarea,
+select{
+width:100%;
+border:1px solid #D8E4F0;
+border-radius:10px;
+padding:12px;
+outline:none;
+font-size:14px;
+}
+
+textarea{
+resize:none;
+height:90px;
+}
+
+.btn{
+width:100%;
+height:45px;
+border:none;
+border-radius:10px;
+background:#0754A0;
+color:white;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#053E78;
+}
+
+/* Mobile */
+
+@media(max-width:1000px){
+
+.summary{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:750px){
+
+.sidebar{
+display:none;
+}
+
+.main{
+margin:0;
+width:100%;
+padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+<i class="fa-solid fa-flask"></i>
+<h2>MEDI HOUSE</h2>
+</div>
+
+<div class="menu">
+
+<a class="active" href="#">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+
+<a href="#">
+<i class="fa-solid fa-vial"></i>
+Lab Requests
+</a>
+
+<a href="#">
+<i class="fa-solid fa-file-medical"></i>
+Reports
+</a>
+
+</div>
+
+<a href="index.html" class="logout">
+Logout
+</a>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="header">
+
+<h1>Laboratory Dashboard</h1>
+
+<div class="staff">
+Lab Technician
+</div>
+
+</div>
+
+<!-- Summary -->
+
+<div class="summary">
+
+<div class="card">
+<i class="fa-solid fa-vial"></i>
+<h2>16</h2>
+<span>Pending Tests</span>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-check-circle"></i>
+<h2>09</h2>
+<span>Completed Today</span>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h2>25</h2>
+<span>Total Requests</span>
+</div>
+
+</div>
+
+<!-- Grid -->
+
+<div class="grid">
+
+<!-- Left -->
+
+<div class="panel">
+
+<h3>Today's Lab Requests</h3>
+
+<div class="search">
+
+<input type="text" placeholder="Search Patient ID">
+
+<button>
+<i class="fa-solid fa-search"></i>
+</button>
+
+</div>
+
+<div class="patient" onclick="loadPatient('Kavindi Perera','MH-00482')">
+
+<strong>Kavindi Perera</strong>
+
+<span>MH-00482</span><br>
+<span>Full Blood Count</span>
+
+</div>
+
+<div class="patient" onclick="loadPatient('Nimal Silva','MH-00483')">
+
+<strong>Nimal Silva</strong>
+
+<span>MH-00483</span><br>
+<span>Urine Analysis</span>
+
+</div>
+
+<div class="patient" onclick="loadPatient('Saman Kumara','MH-00484')">
+
+<strong>Saman Kumara</strong>
+
+<span>MH-00484</span><br>
+<span>Lipid Profile</span>
+
+</div>
+
+</div>
+
+<!-- Right -->
+
+<div class="panel">
+
+<h3>Upload Laboratory Report</h3>
+
+<div class="form-group">
+<label>Patient</label>
+<input id="patientName" value="Kavindi Perera" readonly>
+</div>
+
+<div class="form-group">
+<label>Patient ID</label>
+<input id="patientID" value="MH-00482" readonly>
+</div>
+
+<div class="form-group">
+<label>Test Type</label>
+<select>
+<option>Full Blood Count</option>
+<option>Urine Analysis</option>
+<option>Blood Sugar</option>
+<option>Lipid Profile</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Result Summary</label>
+<textarea placeholder="Enter laboratory findings..."></textarea>
+</div>
+
+<div class="form-group">
+<label>Report Status</label>
+<select>
+<option>Completed</option>
+<option>Pending</option>
+</select>
+</div>
+
+<button class="btn" onclick="uploadReport()">
+<i class="fa-solid fa-upload"></i>
+ Upload Report
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function loadPatient(name,id){
+
+document.getElementById("patientName").value=name;
+document.getElementById("patientID").value=id;
+
+}
+
+function uploadReport(){
+
+const patient=document.getElementById("patientName").value;
+
+alert(
+"Laboratory Report Uploaded!\n\nPatient: "+patient+"\n\nThis report will appear in the Patient Portal after Hibernate integration."
+);
+
+}
+
+</script>
+
+</body>
+</html>

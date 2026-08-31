@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prescriptions | Medi House</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+
+    <style>
+
+        body {
+            background: #f5f8fc;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .page-navbar {
+            height: 78px;
+            background: white;
+            border-bottom: 1px solid #e5edf5;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .page-nav-inner {
+            width: 92%;
+            max-width: 1400px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .page-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            text-decoration: none;
+        }
+
+
+        .page-logo-icon {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            background: #0754a0;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .page-logo-text {
+            font-size: 17px;
+            font-weight: 800;
+
+            color: #082f60;
+        }
+
+
+        .page-logo-text span {
+            color: #0874d1;
+        }
+
+
+        .back-dashboard {
+            color: #0754a0;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .prescription-main {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 40px 0 70px;
+        }
+
+
+        .page-heading {
+            margin-bottom: 28px;
+        }
+
+
+        .page-heading span {
+            color: #0870c8;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+
+        .page-heading h1 {
+            color: #082f60;
+
+            font-size: 32px;
+
+            margin: 8px 0;
+        }
+
+
+        .page-heading p {
+            color: #718399;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           SUMMARY
+           ========================= */
+
+        .prescription-summary {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .summary-card {
+
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            border-radius: 18px;
+
+            padding: 19px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .summary-icon {
+
+            width: 43px;
+            height: 43px;
+
+            border-radius: 12px;
+
+            background: #edf6ff;
+
+            color: #0754a0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .summary-card span {
+
+            display: block;
+
+            color: #8495a8;
+
+            font-size: 9px;
+        }
+
+
+        .summary-card strong {
+
+            display: block;
+
+            color: #1d3c59;
+
+            font-size: 18px;
+
+            margin-top: 4px;
+        }
+
+
+        /* =========================
+           PRESCRIPTION LIST
+           ========================= */
+
+        .prescription-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+
+        .prescription-card {
+
+            background: white;
+
+            border: 1px solid #e1eaf3;
+
+            border-radius: 21px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px rgba(9,54,105,0.035);
+        }
+
+
+        /* HEADER */
+
+        .prescription-header {
+
+            padding: 21px 23px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7fbff,
+                    #eef7ff
+                );
+
+            border-bottom: 1px solid #e4edf5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+
+        .doctor-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .doctor-avatar {
+
+            width: 46px;
+            height: 46px;
+
+            border-radius: 14px;
+
+            background: #0754a0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+
+        .doctor-info strong {
+
+            display: block;
+
+            color: #193d5b;
+
+            font-size: 12px;
+        }
+
+
+        .doctor-info span {
+
+            display: block;
+
+            color: #8495a8;
+
+            font-size: 9px;
+
+            margin-top: 4px;
+        }
+
+
+        .prescription-date {
+
+            text-align: right;
+        }
+
+
+        .prescription-date span {
+
+            display: block;
+
+            color: #8b9cad;
+
+            font-size: 8px;
+        }
+
+
+        .prescription-date strong {
+
+            display: block;
+
+            color: #31506b;
+
+            font-size: 10px;
+
+            margin-top: 4px;
+        }
+
+
+        /* BODY */
+
+        .prescription-body {
+
+            padding: 22px;
+        }
+
+
+        .diagnosis {
+
+            background: #f7faff;
+
+            border: 1px solid #e7eef6;
+
+            border-radius: 13px;
+
+            padding: 13px 15px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .diagnosis-label {
+
+            color: #8b9cad;
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .diagnosis strong {
+
+            color: #34536d;
+
+            font-size: 10px;
+        }
+
+
+        /* MEDICINE TABLE */
+
+        .medicine-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+
+        .medicine-table th {
+
+            text-align: left;
+
+            color: #8b9cad;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            padding: 10px 8px;
+
+            border-bottom: 1px solid #e6edf4;
+        }
+
+
+        .medicine-table td {
+
+            color: #425e76;
+
+            font-size: 9px;
+
+            padding: 13px 8px;
+
+            border-bottom: 1px solid #edf1f5;
+        }
+
+
+        .medicine-name {
+
+            font-weight: 700;
+
+            color: #23445f !important;
+        }
+
+
+        .dosage {
+
+            background: #edf6ff;
+
+            color: #0754a0 !important;
+
+            font-weight: 700;
+
+            border-radius: 6px;
+
+            padding: 5px 7px !important;
+
+            display: inline-block;
+        }
+
+
+        /* INSTRUCTIONS */
+
+        .instructions {
+
+            margin-top: 20px;
+
+            background: #fffaf0;
+
+            border: 1px solid #f1e4c1;
+
+            border-radius: 14px;
+
+            padding: 15px;
+        }
+
+
+        .instructions-title {
+
+            color: #856715;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            margin-bottom: 6px;
+        }
+
+
+        .instructions p {
+
+            color: #8d7a45;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+
+            margin: 0;
+        }
+
+
+        /* FOOTER */
+
+        .prescription-footer {
+
+            padding: 15px 22px;
+
+            border-top: 1px solid #edf1f5;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .prescription-status {
+
+            color: #08704a;
+
+            background: #e8f9f1;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+
+        .view-prescription {
+
+            border: none;
+
+            background: #0754a0;
+
+            color: white;
+
+            border-radius: 9px;
+
+            height: 34px;
+
+            padding: 0 13px;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 650px) {
+
+            .prescription-main {
+
+                padding-top: 28px;
+            }
+
+
+            .page-heading h1 {
+
+                font-size: 27px;
+            }
+
+
+            .prescription-summary {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .prescription-header {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .prescription-date {
+
+                text-align: left;
+
+                padding-left: 59px;
+            }
+
+
+            .medicine-table {
+
+                min-width: 520px;
+            }
+
+
+            .medicine-wrapper {
+
+                overflow-x: auto;
+
+                padding-bottom: 5px;
+            }
+
+
+            .prescription-footer {
+
+                gap: 10px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .view-prescription {
+
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header class="page-navbar">
+
+    <div class="page-nav-inner">
+
+
+        <a href="dashboard.html"
+           class="page-logo">
+
+            <div class="page-logo-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <div class="page-logo-text">
+
+                MEDI
+                <span>HOUSE</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="dashboard.html"
+           class="back-dashboard">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="prescription-main">
+
+
+    <div class="page-heading">
+
+        <span>
+            Medication Records
+        </span>
+
+        <h1>
+            Prescriptions
+        </h1>
+
+        <p>
+            View your prescriptions, medicines, dosage and
+            doctor's instructions.
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUMMARY
+         ========================= -->
+
+    <div class="prescription-summary">
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Prescriptions
+                </span>
+
+                <strong>
+                    4
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-pills"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Medicines
+                </span>
+
+                <strong>
+                    7
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Latest Prescription
+                </span>
+
+                <strong>
+                    12 Aug
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PRESCRIPTIONS
+         ========================= -->
+
+    <div class="prescription-list">
+
+
+        <!-- PRESCRIPTION 1 -->
+
+        <div class="prescription-card">
+
+
+            <div class="prescription-header">
+
+
+                <div class="doctor-info">
+
+                    <div class="doctor-avatar">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Dr. Perera
+                        </strong>
+
+                        <span>
+                            Dental Department
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="prescription-date">
+
+                    <span>
+                        Prescription Date
+                    </span>
+
+                    <strong>
+                        12 August 2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="prescription-body">
+
+
+                <div class="diagnosis">
+
+                    <div class="diagnosis-label">
+                        Diagnosis / Consultation Notes
+                    </div>
+
+                    <strong>
+                        Dental infection and mild gum inflammation
+                    </strong>
+
+                </div>
+
+
+
+                <div class="medicine-wrapper">
+
+                    <table class="medicine-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Medicine
+                                </th>
+
+                                <th>
+                                    Dosage
+                                </th>
+
+                                <th>
+                                    Frequency
+                                </th>
+
+                                <th>
+                                    Duration
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="medicine-name">
+                                    Amoxicillin 500mg
+                                </td>
+
+                                <td>
+                                    <span class="dosage">
+                                        1-0-1
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Twice daily
+                                </td>
+
+                                <td>
+                                    5 Days
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="medicine-name">
+                                    Ibuprofen 400mg
+                                </td>
+
+                                <td>
+                                    <span class="dosage">
+                                        1-1-1
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Three times daily
+                                </td>
+
+                                <td>
+                                    3 Days
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div class="instructions">
+
+                    <div class="instructions-title">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Instructions
+
+                    </div>
+
+                    <p>
+
+                        Take medicines after meals.
+                        Complete the full course of antibiotics.
+                        Drink plenty of water.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="prescription-footer">
+
+                <div class="prescription-status">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Active Prescription
+
+                </div>
+
+
+                <button
+                    class="view-prescription"
+                    onclick="viewPrescription('Dr. Perera', '12 August 2026')">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                    View Prescription
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRESCRIPTION 2 -->
+
+        <div class="prescription-card">
+
+
+            <div class="prescription-header">
+
+
+                <div class="doctor-info">
+
+                    <div class="doctor-avatar">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Dr. Silva
+                        </strong>
+
+                        <span>
+                            General Medicine
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="prescription-date">
+
+                    <span>
+                        Prescription Date
+                    </span>
+
+                    <strong>
+                        02 August 2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="prescription-body">
+
+
+                <div class="diagnosis">
+
+                    <div class="diagnosis-label">
+                        Diagnosis / Consultation Notes
+                    </div>
+
+                    <strong>
+                        Fever and mild respiratory infection
+                    </strong>
+
+                </div>
+
+
+
+                <div class="medicine-wrapper">
+
+                    <table class="medicine-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Medicine
+                                </th>
+
+                                <th>
+                                    Dosage
+                                </th>
+
+                                <th>
+                                    Frequency
+                                </th>
+
+                                <th>
+                                    Duration
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="medicine-name">
+                                    Paracetamol 500mg
+                                </td>
+
+                                <td>
+                                    <span class="dosage">
+                                        1-1-1
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Three times daily
+                                </td>
+
+                                <td>
+                                    3 Days
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="medicine-name">
+                                    Cetirizine 10mg
+                                </td>
+
+                                <td>
+                                    <span class="dosage">
+                                        0-0-1
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Once daily
+                                </td>
+
+                                <td>
+                                    5 Days
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div class="instructions">
+
+                    <div class="instructions-title">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Instructions
+
+                    </div>
+
+                    <p>
+
+                        Take paracetamol after meals when required.
+                        Take cetirizine before bedtime.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="prescription-footer">
+
+                <div class="prescription-status">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Completed
+
+                </div>
+
+
+                <button
+                    class="view-prescription"
+                    onclick="viewPrescription('Dr. Silva', '02 August 2026')">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                    View Prescription
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+    function viewPrescription(doctor, date) {
+
+        alert(
+            "Prescription\n\n" +
+            "Doctor: " + doctor +
+            "\nDate: " + date +
+            "\n\n" +
+            "The complete prescription viewer will be connected to the Medi House backend using Java + Hibernate + MySQL."
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
